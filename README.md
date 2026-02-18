@@ -29,7 +29,7 @@ If it involves elegant code and high-level engineering, I’m in!
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Agile](https://img.shields.io/badge/Agile-47A248?style=for-the-badge&logo=agile&logoColor=white)
 
-<br>
+ 
 
 ## 📈 Github Activity & Open Source Pulse
 
@@ -39,7 +39,7 @@ If it involves elegant code and high-level engineering, I’m in!
 </p>
 
 
-<br>
+ 
 
 ## 🤝 Let’s Build Something Together
 
