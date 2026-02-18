@@ -35,8 +35,9 @@ If it involves elegant code and high-level engineering, I’m in!
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Hmoute-Oussama&show_icons=true&theme=dark&hide_border=true&v=2" alt="Oussama Stats" height="170" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hmoute-Oussama&theme=dark&hide_border=true&v=2" alt="Oussama Streak" height="170" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hmoute-Oussama&theme=dark&hide_border=true&background=0d1117" alt="Oussama Streak" height="170" />
 </p>
+
 
 <br>
 
