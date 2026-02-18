@@ -33,8 +33,10 @@ If it involves elegant code and high-level engineering, I’m in!
 
 ## 📈 Github Activity & Open Source Pulse
 
-<img src="https://github-readme-stats.vercel.app/api?username=Hmoute-Oussama&show_icons=true&theme=dark&hide_border=true" alt="Oussama Stats" height="170" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Hmoute-Oussama&theme=dark&hide_border=true" alt="Oussama Streak" height="170" />
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Hmoute-Oussama&show_icons=true&theme=dark&hide_border=true&v=2" alt="Oussama Stats" height="170" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hmoute-Oussama&theme=dark&hide_border=true&v=2" alt="Oussama Streak" height="170" />
+</p>
 
 <br>
 
