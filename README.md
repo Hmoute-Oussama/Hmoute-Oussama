@@ -6,18 +6,18 @@
 
 </p>
 
-<h1 align="center">Salut 👋, Je suis Oussama Hmoute</h1>
-<h3 align="center">Ingénieur Logiciel | Passionné de Software engineering | Créateur</h3>
+<h1 align="center">Hello! I'm Oussama — I Build What's Next.</h1>
+<h3 align="center">Software Engineer | Backend Wizardry | Crafting the Next Gen of Software</h3>
 
 ---
 
 <p align="center">
-  Je suis un eleve ingénieur logiciel passionné par la création de solutions innovantes et l'exploration du monde de l'apprentissage automatique. J'aime transformer des idées complexes en applications fonctionnelles et élégantes.
+  Fuelled by coffee and curiosity. I specialize in bridging the gap between complex requirements and seamless user experiences. If it involves elegant code and high-level engineering, I’m in!
 </p>
 
 <br>
 
-<h2 align="center">🚀 Mes Compétences et Outils</h2>
+<h2 align="center">🛠 My Tech Stack & Toolbox</h2>
 <p align="center">
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
   <img src="https://img.shields.io/badge/Databases%20%26%20SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="Databases and SQL"/>
@@ -38,7 +38,7 @@
 
 <br>
 
-<h2 align="center">📈 Statistiques GitHub</h2>
+<h2 align="center">Github Activity & Open Source Pulse</h2>
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Hmoute-Oussama&show_icons=true&theme=dark" alt="OussamaHmoute GitHub Stats"/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hmoute-Oussama&theme=dark" alt="GitHub Streak"/>
@@ -46,7 +46,7 @@
 
 <br>
 
-<h2 align="center">💬 Connectons-nous !</h2>
+<h2 align="center">Let’s Build Something Together</h2>
 <p align="center">
   <a href="https://linkedin.com/in/oussama-hmoute" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="mailto:votre.oussamahmoutecrypto@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
