@@ -1,4 +1,4 @@
-## "Welcome to my digital universe! 🚀 I'm Oussama, a Software Engineer on a mission to turn complex code into elegant, real-world solutions. Always learning, always building, and forever curious about what's next in tech!"
+## Welcome to my digital universe! 🚀 I'm Oussama, a Software Engineer on a mission to turn complex code into elegant, real-world solutions. Always learning, always building, and forever curious about what's next in tech!
 <p align="center">
   <img src="https://i.pinimg.com/1200x/7b/87/1c/7b871cee4ff324b9cc17ea028b4074ce.jpg" 
      alt="Oussama Hmoute GitHub Profile Header" 
