@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" width="1100" height="330"
+     role="img" aria-label="CI/CD Visualizer architecture: collect, reduce, project">
+  <title>CI/CD Visualizer architecture</title>
+
+  <defs>
+    <pattern id="p-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/>
+    </pattern>
+    <style>
+      .pm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .p-fade{opacity:0;animation:pfade .7s ease forwards}
+      @keyframes pfade{to{opacity:1}}
+      .p-flow{stroke-dasharray:6 7;animation:pflow 1.8s linear infinite}
+      @keyframes pflow{to{stroke-dashoffset:-26}}
+      .p-pulse{animation:pp 3.4s ease-in-out infinite}
+      @keyframes pp{0%,100%{opacity:.25}50%{opacity:.85}}
+    </style>
+  </defs>
+
+  <rect width="1100" height="330" fill="#0A0E14"/>
+  <rect width="1100" height="330" fill="url(#p-grid)"/>
+
+  <text class="pm" x="42" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">Hmoute-Oussama/CI-CD-VISUALIZER</text>
+  <text class="pm" x="1058" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">v0 &#183; SIMULATOR + GITHUB COLLECTOR</text>
+  <line x1="42" y1="50" x2="1058" y2="50" stroke="#16202C"/>
+
+  <!-- replay loop -->
+  <path class="p-flow" fill="none" stroke="#3A5068" stroke-width="1.2" d="M908 92V66H192v26"/>
+  <path fill="#3A5068" d="M192 92l-5 -9h10z"/>
+  <text class="pm" x="550" y="60" fill="#4C5D70" font-size="9.5" letter-spacing="1.6" text-anchor="middle">replay rebuilds the model from the log</text>
+
+  <!-- forward edges -->
+  <g fill="none" stroke="#2E4257" stroke-width="1.3">
+    <path class="p-flow" style="animation-delay:.4s" d="M346 128H392"/>
+    <path class="p-flow" style="animation-delay:.8s" d="M704 128H750"/>
+  </g>
+  <g fill="#2E4257">
+    <path d="M400 128l-9 -5v10z"/>
+    <path d="M758 128l-9 -5v10z"/>
+  </g>
+
+  <!-- stages -->
+  <g class="p-fade" style="animation-delay:.1s">
+    <rect x="42" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="42" y="92" width="3" height="72" rx="1.5" fill="#4CC2FF"/>
+    <text class="pm" x="62" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">COLLECT</text>
+    <text class="pm" x="62" y="144" fill="#6E8095" font-size="9">GitHub, or the built-in simulator</text>
+  </g>
+  <g class="p-fade" style="animation-delay:.3s">
+    <rect x="400" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="400" y="92" width="3" height="72" rx="1.5" fill="#34D399"/>
+    <text class="pm" x="420" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">REDUCE</text>
+    <text class="pm" x="420" y="144" fill="#6E8095" font-size="9">pure applyEvent(model, event)</text>
+  </g>
+  <g class="p-fade" style="animation-delay:.5s">
+    <rect x="758" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="758" y="92" width="3" height="72" rx="1.5" fill="#A78BFA"/>
+    <rect class="p-pulse" x="758" y="92" width="300" height="72" rx="8" fill="none" stroke="#A78BFA" stroke-width="1"/>
+    <text class="pm" x="778" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">PROJECT</text>
+    <text class="pm" x="778" y="144" fill="#6E8095" font-size="9">DAG, replay, time travel, regression</text>
+  </g>
+
+  <!-- artefacts -->
+  <g class="pm" font-size="10" fill="#8FA3B8">
+    <rect class="p-fade" style="animation-delay:.35s" x="42"  y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
+    <text class="p-fade" style="animation-delay:.35s" x="58"  y="207">one normalised event stream</text>
+    <rect class="p-fade" style="animation-delay:.55s" x="400" y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
+    <text class="p-fade" style="animation-delay:.55s" x="416" y="207">execution model (pure function)</text>
+    <rect class="p-fade" style="animation-delay:.75s" x="758" y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
+    <text class="p-fade" style="animation-delay:.75s" x="774" y="207">live DAG &#183; logs &#183; regression panel</text>
+  </g>
+
+  <line x1="42" y1="248" x2="1058" y2="248" stroke="#16202C"/>
+  <text class="pm" x="42" y="272" fill="#5E7386" font-size="10" letter-spacing="1.2">invariants: events are the only source of truth &#183; the UI never calls GitHub &#183; model = f(events)</text>
+  <text class="pm" x="42" y="294" fill="#5E7386" font-size="10" letter-spacing="1.2">flight recorder: JSONL on disk &#183; a new CI provider is a new collector, nothing else changes</text>
+  <text class="pm" x="42" y="316" fill="#3C4C5E" font-size="10" letter-spacing="1.2">surface: React 18 + Vite + zustand &#183; Express + ws &#183; npm workspaces &#183; hand-rolled SVG graph</text>
+
+  <rect x="0.5" y="0.5" width="1099" height="329" fill="none" stroke="#1B2735"/>
+</svg>

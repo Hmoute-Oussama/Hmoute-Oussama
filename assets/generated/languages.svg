@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Primary language across public repositories">
+  <title>Language surface</title>
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/></pattern>
+    <style>
+      .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .fade{opacity:0;animation:fade .7s ease forwards}
+      @keyframes fade{to{opacity:1}}
+      .flow{stroke-dasharray:6 7;animation:flow 1.8s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-26}}
+      .breathe{animation:breathe 3.4s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.25}50%{opacity:.85}}
+    </style>
+  </defs>
+  <rect width="1200" height="340" fill="#0A0E14"/>
+  <rect width="1200" height="340" fill="url(#g)"/>
+<text class="m" x="40" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">05 / LANGUAGE SURFACE</text>
+<text class="m" x="1160" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">PRIMARY LANGUAGE OF 82 NON-FORK REPOSITORIES</text>
+<line x1="40" y1="58" x2="1160" y2="58" stroke="#16202C"/>
+<text class="m" x="168" y="93" fill="#8FA3B8" font-size="11" text-anchor="end">Java</text>
+<rect x="180" y="81" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="81" width="860" height="13" rx="3" fill="#4CC2FF" opacity="0.95"/>
+<text class="m" x="1054" y="92" fill="#6E8095" font-size="10">15 repos</text>
+<text class="m" x="168" y="124" fill="#8FA3B8" font-size="11" text-anchor="end">Python</text>
+<rect x="180" y="112" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="112" width="688" height="13" rx="3" fill="#4CC2FF" opacity="0.86"/>
+<text class="m" x="1054" y="123" fill="#6E8095" font-size="10">12 repos</text>
+<text class="m" x="168" y="155" fill="#8FA3B8" font-size="11" text-anchor="end">HTML</text>
+<rect x="180" y="143" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="143" width="344" height="13" rx="3" fill="#4CC2FF" opacity="0.78"/>
+<text class="m" x="1054" y="154" fill="#6E8095" font-size="10">6 repos</text>
+<text class="m" x="168" y="186" fill="#8FA3B8" font-size="11" text-anchor="end">C++</text>
+<rect x="180" y="174" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="174" width="287" height="13" rx="3" fill="#4CC2FF" opacity="0.69"/>
+<text class="m" x="1054" y="185" fill="#6E8095" font-size="10">5 repos</text>
+<text class="m" x="168" y="217" fill="#8FA3B8" font-size="11" text-anchor="end">JavaScript</text>
+<rect x="180" y="205" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="205" width="287" height="13" rx="3" fill="#4CC2FF" opacity="0.61"/>
+<text class="m" x="1054" y="216" fill="#6E8095" font-size="10">5 repos</text>
+<text class="m" x="168" y="248" fill="#8FA3B8" font-size="11" text-anchor="end">Blade</text>
+<rect x="180" y="236" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="236" width="229" height="13" rx="3" fill="#4CC2FF" opacity="0.52"/>
+<text class="m" x="1054" y="247" fill="#6E8095" font-size="10">4 repos</text>
+<text class="m" x="168" y="279" fill="#8FA3B8" font-size="11" text-anchor="end">C</text>
+<rect x="180" y="267" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="267" width="229" height="13" rx="3" fill="#4CC2FF" opacity="0.44"/>
+<text class="m" x="1054" y="278" fill="#6E8095" font-size="10">4 repos</text>
+<text class="m" x="168" y="310" fill="#8FA3B8" font-size="11" text-anchor="end">TypeScript</text>
+<rect x="180" y="298" width="860" height="13" rx="3" fill="#0E1720"/>
+<rect x="180" y="298" width="229" height="13" rx="3" fill="#4CC2FF" opacity="0.35"/>
+<text class="m" x="1054" y="309" fill="#6E8095" font-size="10">4 repos</text>
+<text class="m" x="40" y="330" fill="#3C4C5E" font-size="9" letter-spacing="1.4">COUNTS REPOSITORIES BY PRIMARY LANGUAGE, NOT BYTES</text>
+<rect x="0.5" y="0.5" width="1199" height="339" fill="none" stroke="#1B2735"/>
+</svg>

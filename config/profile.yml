@@ -1,0 +1,206 @@
+# ===========================================================================
+#  GitHub profile : curated content model
+# ---------------------------------------------------------------------------
+#  This file is the single source of truth for everything that is NOT fetched
+#  from the GitHub API. It is edited by hand and read by scripts/ and by the
+#  README. Nothing here is generated or inferred: every claim below is backed
+#  by a repository that exists under github.com/Hmoute-Oussama.
+#
+#  Design rule: no emojis, no filler, no metric that cannot be traced to a
+#  repository or to the GitHub API at runtime.
+# ===========================================================================
+
+identity:
+  name: Oussama Hmoute
+  handle: Hmoute-Oussama
+  role: Software Engineering student at ENSAH
+  statement: >-
+    I build systems that can prove their own claims, measure their own
+    failures, and explain what they did.
+  focus:
+    - Software engineering
+    - AI systems and agents
+    - Cybersecurity
+  links:
+    github: https://github.com/Hmoute-Oussama
+    linkedin: https://www.linkedin.com/in/oussama-hmoute
+    email: oussamahmoutecrypto@gmail.com
+
+# ---------------------------------------------------------------------------
+#  Engineering universe : the six domains and how they connect.
+#  "edges" render as labelled relationships in assets/universe.svg.
+# ---------------------------------------------------------------------------
+domains:
+  - id: swe
+    label: Software Engineering
+    note: architecture, correctness, maintainability
+  - id: ai
+    label: AI & Agents
+    note: LLM systems, tooling, evaluation
+  - id: sec
+    label: Cybersecurity
+    note: red teaming, packet analysis, OSINT
+  - id: devops
+    label: DevOps & DevSecOps
+    note: pipelines, observability, automation
+  - id: dist
+    label: Distributed Systems
+    note: services, protocols, resilience
+  - id: cloud
+    label: Cloud & Infrastructure
+    note: containers, Linux, deployment
+
+edges:
+  - [swe, ai]
+  - [ai, sec]
+  - [sec, devops]
+  - [devops, cloud]
+  - [cloud, dist]
+  - [dist, swe]
+
+# ---------------------------------------------------------------------------
+#  Featured systems : presented as engineering artefacts, not repo cards.
+#  Fields: problem, architecture (stages), decisions, stack, status.
+# ---------------------------------------------------------------------------
+projects:
+  - name: VERITY
+    repo: Hmoute-Oussama/VERITY
+    artifact: assets/systems/verity.svg
+    tagline: The reality layer for AI coding agents
+    accent: "#34D399"
+    problem: >-
+      A coding agent can confidently report work that is not present, tests
+      that never ran, and commands whose prerequisites do not exist. Claims
+      and evidence are treated as the same thing.
+    architecture:
+      - "CAPTURE: agent prose, transcripts and Git diffs become discrete claims"
+      - "VERIFY: independent checks run over AST, dependencies, tests, HTTP and secrets"
+      - "RECORD: evidence, confidence and SHA-256 digests of every dependency are stored"
+      - "INVALIDATE: edited or expired dependencies mark old evidence as stale"
+      - "GUARD: shell actions are checked against reality before they execute"
+    decisions:
+      - Agent statements are claims, never evidence
+      - Verifiers are deterministic and explainable, not model judgements
+      - Evidence is bound to the working tree; a hash mismatch invalidates it
+      - Blocking is conservative: concrete contradictions block, uncertainty is surfaced
+      - Local-first SQLite store; no claim leaves the machine
+    stack: [Python 3.10+, Typer, Rich, PyYAML, SQLite, MCP stdio, GitHub Actions]
+    status: >-
+      Published to PyPI as verity-evidence v1.0.0. Cross-platform CI on Linux,
+      macOS and Windows. 36 verifiers, an MCP server, and a multi-language
+      integration matrix (FastAPI, Flask, Next.js, Docker Compose, monorepo,
+      TypeScript, Java, Go).
+
+  - name: AgentSnap
+    repo: Hmoute-Oussama/AgentSnap
+    artifact: assets/systems/agentsnap.svg
+    tagline: Unit tests for AI agents
+    accent: "#A78BFA"
+    problem: >-
+      Agent behaviour is ordinary code that happens to be non-deterministic.
+      Prompt edits, model updates and tool changes alter behaviour without
+      touching a line of source, so regressions ship unnoticed.
+    architecture:
+      - "RUN: the real agent executes in a throwaway copy of the repository"
+      - "RECORD: every file read, written or deleted, every command and tool call"
+      - "ASSERT: declarative checks with exit codes, not suggestions"
+      - "SNAPSHOT: each run reduces to a behavioural baseline; new side effects fail"
+    decisions:
+      - Assertions, not vibes: every check has an exit code and a message
+      - Commands execute as argv, never through a shell
+      - Environment allow-list; tokens and agent sockets are dropped by default
+      - Paths resolving outside the sandbox are refused
+      - Secrets are redacted before anything is written
+    stack: [TypeScript, Node.js, GitHub composite action, Docker sandbox]
+    status: >-
+      Distributed as the npm package agentsnap. Three-layer test suite (unit,
+      integration against a deterministic fake provider, end-to-end on the
+      built binary) so CI never spends a token.
+
+  - name: CI/CD Visualizer
+    repo: Hmoute-Oussama/CI-CD-VISUALIZER
+    artifact: assets/systems/pipeline.svg
+    tagline: Flight recorder for CI/CD pipelines
+    accent: "#4CC2FF"
+    problem: >-
+      CI/CD is a black box you debug by scrolling YAML and logs. There is no
+      execution model, no recording, and no way to ask why a run was slow.
+    architecture:
+      - "COLLECT: GitHub, or a built-in simulator, normalise into one event stream"
+      - "REDUCE: a pure function applyEvent(model, event) builds the execution model"
+      - "PROJECT: live DAG, drill-down logs, replay, time travel and regression panel"
+    decisions:
+      - Events are the single source of truth; the UI never talks to GitHub
+      - The execution model is a pure function of events, so replay is free
+      - Provider-agnostic: a new CI provider is a new collector, nothing else
+      - Runs persist as a JSONL flight recorder on disk
+    stack: [TypeScript, npm workspaces, Node.js, Express, ws, React 18, Vite, zustand]
+    status: >-
+      v0 with a simulator collector and a GitHub webhook collector. Hand-rolled
+      SVG pipeline graph; automated performance-regression detection.
+
+  - name: CrisisMesh
+    repo: Hmoute-Oussama/CrisisMesh-Apertus
+    artifact: assets/systems/crisismesh.svg
+    tagline: Noisy crisis reports into a verifiable situation graph
+    accent: "#F5A524"
+    problem: >-
+      During a crisis, reports are noisy, duplicated, contradictory and partly
+      adversarial. Naive extraction fabricates counts and mis-types resources.
+    architecture:
+      - "INTAKE: multilingual reports across Arabic, Darija and English"
+      - "EXTRACT: grammar-constrained decoding against a controlled taxonomy"
+      - "GUARD: abstention discipline and prompt-injection defence"
+      - "RECONCILE: deterministic contradiction detection and evidence-level dedup"
+      - "GRAPH: a NetworkX situation graph with verification state per node"
+    decisions:
+      - Grammars are generated from the taxonomy, not written by hand
+      - The model abstains rather than guessing; unsupported claims are dropped
+      - Raw text is immutable at the database layer
+      - Truth is measured, not asserted: a Truth Preservation Score gates promotion
+    stack: [Python, FastAPI, SQLAlchemy, NetworkX, llama.cpp GGUF, GBNF grammars]
+    status: >-
+      Truth Preservation Score 0.8433 with a grounding rate of 1.0 on the demo
+      scenario; contradiction detection and cross-language place identity in
+      place, dashboard pending.
+
+# ---------------------------------------------------------------------------
+#  Lower-level systems, kept as a terse list. Evidence over adjectives.
+#  Every "repo" slug below was read back from the GitHub API, not guessed.
+# ---------------------------------------------------------------------------
+systems:
+  - name: wireshark-clone
+    repo: Hmoute-Oussama/wireshark-clone
+    lang: C++
+    note: packet capture and dissection engine
+  - name: SGF file system
+    repo: Hmoute-Oussama/Un-mini-Syst-me-de-Gestion-de-Fichiers-SGF-en-C-
+    lang: C++
+    note: file and directory manager with an on-disk layout
+  - name: wirehack
+    repo: Hmoute-Oussama/wirehack
+    lang: C, Makefile
+    note: wireless network security tooling
+  - name: projet-reseau-NFV
+    repo: Hmoute-Oussama/projet-reseau-NFV
+    lang: PHP
+    note: network function virtualisation exercise
+  - name: CyberLab
+    repo: Hmoute-Oussama/CyberLab
+    lang: Java
+    note: security lab utilities
+
+# ---------------------------------------------------------------------------
+#  Current experiments : edit this list to update the profile. Keep it short.
+# ---------------------------------------------------------------------------
+experiments:
+  - title: Reality resources for agents
+    detail: Exposing project state to agents through MCP tools instead of prompting.
+  - title: Grammar-constrained extraction
+    detail: GBNF grammars built from a taxonomy so structured output cannot drift.
+  - title: Event-sourced execution models
+    detail: Modelling pipelines as a pure reducer over an event stream.
+  - title: Agent behavioural baselines
+    detail: Snapshotting the file, command and tool footprint of a real agent.
+  - title: Geolocation evidence pipelines
+    detail: Studying how metadata, imagery and text signals combine into a location.

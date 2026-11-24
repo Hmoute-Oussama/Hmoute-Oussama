@@ -1,0 +1,62 @@
+name: assets
+
+# Regenerates the dynamic components of the profile from live GitHub data.
+#
+# The generator embeds no wall-clock timestamps: every "as of" marker is taken
+# from the data itself, so the commit step below only fires when something on
+# the profile genuinely changed. A failed fetch degrades one asset; it never
+# fails the run and never fabricates a number.
+
+on:
+  schedule:
+    - cron: "17 4 * * 1" # Mondays at 04:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - "config/profile.yml"
+      - "scripts/**"
+      - ".github/workflows/assets.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assets
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the one dependency
+        run: pip install --quiet --disable-pip-version-check pyyaml
+
+      - name: Validate the hand-written assets
+        run: python scripts/validate_assets.py
+
+      - name: Regenerate the dynamic assets
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/build_assets.py
+
+      - name: Validate the regenerated assets
+        run: python scripts/validate_assets.py
+
+      - name: Commit only when the data changed
+        run: |
+          if [ -z "$(git status --porcelain -- assets/generated)" ]; then
+            echo "no change in generated assets; nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/generated
+          git commit -m "chore(assets): refresh generated components from live GitHub data"
+          git push

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560"
+     role="img" aria-label="Engineering universe: six domains and the relationships between them">
+  <title>Engineering universe - six domains and how they connect</title>
+
+  <defs>
+    <pattern id="u-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#141E29" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="u-core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4CC2FF" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#4CC2FF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .um{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .us{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .u-fade{opacity:0;animation:ufade .85s ease forwards}
+      @keyframes ufade{to{opacity:1}}
+      .u-draw{stroke-dasharray:340;stroke-dashoffset:340;animation:udraw 1.6s cubic-bezier(.3,.7,.3,1) forwards}
+      @keyframes udraw{to{stroke-dashoffset:0}}
+      .u-flow{stroke-dasharray:5 9;animation:uflow 2.6s linear infinite}
+      @keyframes uflow{to{stroke-dashoffset:-56}}
+      .u-breathe{animation:ubr 4.5s ease-in-out infinite}
+      @keyframes ubr{0%,100%{opacity:.3}50%{opacity:.8}}
+      .u-spin{transform-box:fill-box;transform-origin:center;animation:uspin 80s linear infinite}
+      @keyframes uspin{to{transform:rotate(360deg)}}
+      .u-spin-r{transform-box:fill-box;transform-origin:center;animation:uspin 120s linear infinite reverse}
+    </style>
+  </defs>
+
+  <rect width="1200" height="560" fill="#0A0E14"/>
+  <rect width="1200" height="560" fill="url(#u-grid)"/>
+  <ellipse cx="600" cy="320" rx="380" ry="260" fill="url(#u-core)"/>
+
+  <text class="um" x="40" y="42" fill="#3C4C5E" font-size="11" letter-spacing="3">01 / ENGINEERING UNIVERSE</text>
+  <text class="us" x="40" y="70" fill="#8FA3B8" font-size="15">Six disciplines, one practice. The edges are relationships, not a list.</text>
+  <line x1="40" y1="88" x2="1160" y2="88" stroke="#16202C"/>
+
+  <g transform="translate(600,320)">
+
+    <!-- orbits -->
+    <ellipse class="u-spin" rx="270" ry="180" fill="none" stroke="#18242F" stroke-width="1" stroke-dasharray="1 9"/>
+    <ellipse class="u-spin-r" rx="150" ry="100" fill="none" stroke="#1B2735" stroke-width="1" stroke-dasharray="1 7"/>
+    <circle r="3" fill="#4CC2FF" opacity="0.75">
+      <animateMotion dur="30s" repeatCount="indefinite"
+                     path="M270,0 A270,180 0 1,1 -270,0 A270,180 0 1,1 270,0"/>
+    </circle>
+    <circle r="2.4" fill="#2DD4BF" opacity="0.65">
+      <animateMotion dur="44s" repeatCount="indefinite"
+                     path="M-270,0 A270,180 0 1,0 270,0 A270,180 0 1,0 -270,0"/>
+    </circle>
+
+    <!-- spokes : hub to each domain -->
+    <g fill="none" stroke="#243444" stroke-width="1.2" stroke-linecap="round">
+      <path class="u-draw" style="animation-delay:.35s" d="M0 0L233.8 90"/>
+      <path class="u-draw" style="animation-delay:.45s" d="M0 0L0 180"/>
+      <path class="u-draw" style="animation-delay:.55s" d="M0 0L-233.8 90"/>
+      <path class="u-draw" style="animation-delay:.65s" d="M0 0L-233.8 -90"/>
+      <path class="u-draw" style="animation-delay:.75s" d="M0 0L0 -180"/>
+      <path class="u-draw" style="animation-delay:.85s" d="M0 0L233.8 -90"/>
+    </g>
+
+    <!-- relationship ring : corner to corner between adjacent domains -->
+    <g fill="none" stroke="#2E4257" stroke-width="1">
+      <path class="u-fade u-flow" style="animation-delay:1.1s" d="M155.8 112L78 158"/>
+      <path class="u-fade u-flow" style="animation-delay:1.2s" d="M-78 158L-155.8 112"/>
+      <path class="u-fade u-flow" style="animation-delay:1.3s" d="M-311.8 112L-311.8 -112"/>
+      <path class="u-fade u-flow" style="animation-delay:1.4s" d="M-311.8 -68L-78 -202"/>
+      <path class="u-fade u-flow" style="animation-delay:1.5s" d="M78 -202L155.8 -112"/>
+      <path class="u-fade u-flow" style="animation-delay:1.6s" d="M311.8 -112L311.8 112"/>
+    </g>
+
+    <!-- pulses on the spokes -->
+    <circle r="3" fill="#4CC2FF">
+      <animateMotion dur="3.4s" repeatCount="indefinite" path="M0 0L0 -180"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#A78BFA">
+      <animateMotion dur="4.1s" begin="1.1s" repeatCount="indefinite" path="M0 0L0 180"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.1s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#F5A524">
+      <animateMotion dur="4.6s" begin="2.2s" repeatCount="indefinite" path="M0 0L-233.8 90"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.6s" begin="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- hub -->
+    <rect x="-116" y="-32" width="232" height="64" rx="8" fill="#0D1620" stroke="#2E4155" stroke-width="1.2"/>
+    <rect class="u-breathe" x="-116" y="-32" width="232" height="64" rx="8" fill="none" stroke="#4CC2FF" stroke-width="1"/>
+    <text class="um" x="0" y="-4" fill="#DCE8F4" font-size="14" letter-spacing="3.2" text-anchor="middle">ENGINEERING</text>
+    <text class="um" x="0" y="17" fill="#5E7386" font-size="9.5" letter-spacing="2.6" text-anchor="middle">BUILD &#183; VERIFY &#183; SHIP</text>
+
+    <!-- relationship labels -->
+    <g class="um" font-size="9.5" letter-spacing="1">
+      <text class="u-fade" style="animation-delay:1.9s"  x="116.9"  y="139"   fill="#5E7386" text-anchor="middle">model serving</text>
+      <text class="u-fade" style="animation-delay:2s"    x="-116.9" y="139"   fill="#5E7386" text-anchor="middle">adversarial testing</text>
+      <text class="u-fade" style="animation-delay:2.1s"  x="-311.8" y="4"     fill="#5E7386" text-anchor="middle">trust boundaries</text>
+      <text class="u-fade" style="animation-delay:2.2s"  x="-194.9" y="-131"  fill="#5E7386" text-anchor="middle">observability</text>
+      <text class="u-fade" style="animation-delay:2.3s"  x="116.9"  y="-153"  fill="#5E7386" text-anchor="middle">release automation</text>
+      <text class="u-fade" style="animation-delay:2.4s"  x="311.8"  y="4"     fill="#5E7386" text-anchor="middle">deployment targets</text>
+    </g>
+
+    <!-- domain cards -->
+    <g>
+      <g class="u-fade" style="animation-delay:1.5s">
+        <rect x="155.8" y="68" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="155.8" y="68" width="3" height="44" rx="1.5" fill="#2DD4BF"/>
+        <text class="um" x="170" y="88" fill="#D7E3F0" font-size="11" letter-spacing="1.1">CLOUD &amp; INFRA</text>
+        <text class="um" x="170" y="102" fill="#6E8095" font-size="9">containers &#183; Linux</text>
+      </g>
+      <g class="u-fade" style="animation-delay:1.62s">
+        <rect x="-78" y="158" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="-78" y="158" width="3" height="44" rx="1.5" fill="#A78BFA"/>
+        <text class="um" x="-64" y="178" fill="#D7E3F0" font-size="11" letter-spacing="1.1">AI &amp; AGENTS</text>
+        <text class="um" x="-64" y="192" fill="#6E8095" font-size="9">LLM systems &#183; tooling</text>
+      </g>
+      <g class="u-fade" style="animation-delay:1.74s">
+        <rect x="-311.8" y="68" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="-311.8" y="68" width="3" height="44" rx="1.5" fill="#F5A524"/>
+        <text class="um" x="-297.8" y="88" fill="#D7E3F0" font-size="11" letter-spacing="1.1">CYBERSECURITY</text>
+        <text class="um" x="-297.8" y="102" fill="#6E8095" font-size="9">red teaming &#183; OSINT</text>
+      </g>
+      <g class="u-fade" style="animation-delay:1.86s">
+        <rect x="-311.8" y="-112" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="-311.8" y="-112" width="3" height="44" rx="1.5" fill="#60A5FA"/>
+        <text class="um" x="-297.8" y="-92" fill="#D7E3F0" font-size="11" letter-spacing="1.1">DISTRIBUTED SYS.</text>
+        <text class="um" x="-297.8" y="-78" fill="#6E8095" font-size="9">protocols &#183; resilience</text>
+      </g>
+      <g class="u-fade" style="animation-delay:1.98s">
+        <rect x="-78" y="-202" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="-78" y="-202" width="3" height="44" rx="1.5" fill="#2DD4BF"/>
+        <text class="um" x="-64" y="-182" fill="#D7E3F0" font-size="11" letter-spacing="1.1">DEVOPS</text>
+        <text class="um" x="-64" y="-168" fill="#6E8095" font-size="9">pipelines &#183; automation</text>
+      </g>
+      <g class="u-fade" style="animation-delay:2.1s">
+        <rect x="155.8" y="-112" width="156" height="44" rx="7" fill="#0D1620" stroke="#1E2C3A"/>
+        <rect x="155.8" y="-112" width="3" height="44" rx="1.5" fill="#4CC2FF"/>
+        <text class="um" x="170" y="-92" fill="#D7E3F0" font-size="11" letter-spacing="1.1">SOFTWARE ENG.</text>
+        <text class="um" x="170" y="-78" fill="#6E8095" font-size="9">architecture &#183; correctness</text>
+      </g>
+    </g>
+  </g>
+
+  <text class="um" x="40" y="548" fill="#3C4C5E" font-size="10" letter-spacing="2">NODES ARE DISCIPLINES &#183; EDGES ARE RELATIONSHIPS</text>
+  <rect x="0.5" y="0.5" width="1199" height="559" fill="none" stroke="#1B2735"/>
+</svg>

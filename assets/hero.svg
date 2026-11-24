@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380"
+     role="img" aria-label="Oussama Hmoute - software engineering, AI systems and cybersecurity">
+  <title>Oussama Hmoute - Software Engineering / AI Systems / Cybersecurity</title>
+
+  <defs>
+    <pattern id="h-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#151F2B" stroke-width="1"/>
+    </pattern>
+    <pattern id="h-grid-lg" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0V200" fill="none" stroke="#1A2634" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="h-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4CC2FF" stop-opacity="0.9"/>
+      <stop offset="0.65" stop-color="#4CC2FF" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#4CC2FF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4CC2FF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#4CC2FF" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="h-type">
+      <rect x="0" y="0" width="0" height="34">
+        <animate attributeName="width" from="0" to="620" begin="1.2s" dur="2.1s" fill="freeze"/>
+      </rect>
+    </clipPath>
+
+    <style>
+      .hm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .hs{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .h-fade{opacity:0;animation:hfade .9s ease forwards}
+      @keyframes hfade{to{opacity:1}}
+      .h-edge{stroke-dasharray:640;stroke-dashoffset:640;animation:hdraw 1.7s cubic-bezier(.3,.7,.3,1) forwards}
+      @keyframes hdraw{to{stroke-dashoffset:0}}
+      .h-node{opacity:0;animation:hfade .7s ease forwards}
+      .h-spin{transform-box:fill-box;transform-origin:center;animation:hspin 30s linear infinite}
+      @keyframes hspin{to{transform:rotate(360deg)}}
+      .h-pulse{animation:hpulse 3.4s ease-in-out infinite}
+      @keyframes hpulse{0%,100%{opacity:.2}50%{opacity:.85}}
+      .h-blink{animation:hblink 1.15s steps(1) infinite}
+      @keyframes hblink{50%{opacity:0}}
+      .h-scan{animation:hscan 8s ease-in-out infinite}
+      @keyframes hscan{0%{transform:translateY(0)}50%{transform:translateY(330px)}100%{transform:translateY(0)}}
+    </style>
+  </defs>
+
+  <!-- canvas -->
+  <rect width="1200" height="380" fill="#0A0E14"/>
+  <rect width="1200" height="380" fill="url(#h-grid)"/>
+  <rect width="1200" height="380" fill="url(#h-grid-lg)"/>
+  <ellipse cx="950" cy="190" rx="330" ry="230" fill="url(#h-glow)"/>
+
+  <!-- corner registration marks -->
+  <g stroke="#243444" stroke-width="1" fill="none">
+    <path d="M28 44V28h16"/>
+    <path d="M1172 44V28h-16"/>
+    <path d="M28 336v16h16"/>
+    <path d="M1172 336v16h-16"/>
+  </g>
+
+  <!-- scanline -->
+  <rect class="h-scan" x="0" y="20" width="1200" height="1.5" fill="#4CC2FF" opacity="0.07"/>
+
+  <!-- section: left, identity block -->
+
+  <g class="h-fade" style="animation-delay:.05s">
+    <text class="hm" x="64" y="112" fill="#4CC2FF" font-size="13" letter-spacing="3.4">// SOFTWARE ENGINEERING</text>
+  </g>
+
+  <g class="h-fade" style="animation-delay:.2s">
+    <text class="hs" x="62" y="176" fill="#E9F1F9" font-size="54" font-weight="700" letter-spacing="0.4">OUSSAMA HMOUTE</text>
+  </g>
+
+  <g class="h-fade" style="animation-delay:.45s">
+    <text class="hs" x="64" y="214" fill="#8FA3B8" font-size="16.5">AI systems, cybersecurity and distributed infrastructure.</text>
+  </g>
+
+  <rect class="h-fade" style="animation-delay:.6s" x="64" y="238" width="560" height="1.5" fill="url(#h-rule)"/>
+
+  <g clip-path="url(#h-type)">
+    <text class="hm" x="64" y="290" fill="#C6D3E2" font-size="15">
+      <tspan fill="#4CC2FF">&gt;</tspan> building systems that can prove their own claims
+    </text>
+  </g>
+  <rect class="h-blink" x="486" y="276" width="9" height="17" fill="#4CC2FF" opacity="0.9"/>
+
+  <g class="h-fade" style="animation-delay:1.1s">
+    <text class="hm" x="64" y="340" fill="#4C5D70" font-size="11.5" letter-spacing="2.4">EST. 2024.04   ·   ENSAH   ·   OPEN SOURCE</text>
+  </g>
+
+  <!-- section: right, live topology -->
+
+  <g class="h-fade" style="animation-delay:.35s" transform="translate(950,190)">
+
+    <!-- boundary -->
+    <circle r="158" fill="none" stroke="#1B2735" stroke-width="1" stroke-dasharray="2 7"/>
+    <circle class="h-spin" r="118" fill="none" stroke="#243444" stroke-width="1" stroke-dasharray="14 10" opacity="0.75"/>
+
+    <!-- spokes -->
+    <g fill="none" stroke-width="1.2" stroke-linecap="round">
+      <path class="h-edge" style="animation-delay:.6s"  stroke="#2E4155" d="M0 0L112 0"/>
+      <path class="h-edge" style="animation-delay:.72s" stroke="#2E4155" d="M0 0L56 97"/>
+      <path class="h-edge" style="animation-delay:.84s" stroke="#2E4155" d="M0 0L-56 97"/>
+      <path class="h-edge" style="animation-delay:.96s" stroke="#2E4155" d="M0 0L-112 0"/>
+      <path class="h-edge" style="animation-delay:1.08s" stroke="#2E4155" d="M0 0L-56 -97"/>
+      <path class="h-edge" style="animation-delay:1.2s"  stroke="#2E4155" d="M0 0L56 -97"/>
+      <!-- cross-domain relationships -->
+      <path class="h-edge" style="animation-delay:1.3s" stroke="#1E2E3E" stroke-dasharray="3 4" d="M56 -97L-56 -97"/>
+      <path class="h-edge" style="animation-delay:1.4s" stroke="#1E2E3E" stroke-dasharray="3 4" d="M112 0L56 97"/>
+    </g>
+
+    <!-- travelling pulses -->
+    <circle r="3.2" fill="#4CC2FF">
+      <animateMotion dur="3.6s" repeatCount="indefinite" path="M0 0L56 -97"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.2" fill="#2DD4BF">
+      <animateMotion dur="4.2s" begin="1s" repeatCount="indefinite" path="M0 0L-112 0"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.2" fill="#A78BFA">
+      <animateMotion dur="4s" begin="2s" repeatCount="indefinite" path="M0 0L56 97"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- hub -->
+    <circle r="30" fill="#0D1620" stroke="#2E4155" stroke-width="1"/>
+    <circle class="h-pulse" r="30" fill="none" stroke="#4CC2FF" stroke-width="1" opacity="0.4"/>
+    <circle r="5" fill="#4CC2FF"/>
+    <text class="hm" x="0" y="50" fill="#4C5D70" font-size="9.5" letter-spacing="2" text-anchor="middle">CORE</text>
+
+    <!-- nodes -->
+    <g>
+      <circle class="h-node" style="animation-delay:.75s" cx="112" cy="0" r="7" fill="#0D1620" stroke="#4CC2FF" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:.75s" x="112" y="26" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">CLOUD</text>
+
+      <circle class="h-node" style="animation-delay:.87s" cx="56" cy="97" r="7" fill="#0D1620" stroke="#2DD4BF" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:.87s" x="56" y="123" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">DEVOPS</text>
+
+      <circle class="h-node" style="animation-delay:.99s" cx="-56" cy="97" r="7" fill="#0D1620" stroke="#2DD4BF" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:.99s" x="-56" y="123" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">SYSTEMS</text>
+
+      <circle class="h-node" style="animation-delay:1.11s" cx="-112" cy="0" r="7" fill="#0D1620" stroke="#4CC2FF" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:1.11s" x="-112" y="26" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">BACKEND</text>
+
+      <circle class="h-node" style="animation-delay:1.23s" cx="-56" cy="-97" r="7" fill="#0D1620" stroke="#F5A524" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:1.23s" x="-56" y="-71" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">SECURITY</text>
+
+      <circle class="h-node" style="animation-delay:1.35s" cx="56" cy="-97" r="7" fill="#0D1620" stroke="#A78BFA" stroke-width="1.4"/>
+      <text class="hm h-node" style="animation-delay:1.35s" x="56" y="-71" fill="#8FA3B8" font-size="10.5" letter-spacing="1.4" text-anchor="middle">AI</text>
+    </g>
+  </g>
+
+  <!-- frame -->
+  <rect x="0.5" y="0.5" width="1199" height="379" fill="none" stroke="#1B2735"/>
+</svg>

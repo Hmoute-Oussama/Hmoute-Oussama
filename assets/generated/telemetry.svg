@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 190" width="1200" height="190" role="img" aria-label="Live GitHub telemetry">
+  <title>Telemetry</title>
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/></pattern>
+    <style>
+      .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .fade{opacity:0;animation:fade .7s ease forwards}
+      @keyframes fade{to{opacity:1}}
+      .flow{stroke-dasharray:6 7;animation:flow 1.8s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-26}}
+      .breathe{animation:breathe 3.4s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.25}50%{opacity:.85}}
+    </style>
+  </defs>
+  <rect width="1200" height="190" fill="#0A0E14"/>
+  <rect width="1200" height="190" fill="url(#g)"/>
+<text class="m" x="40" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">05 / TELEMETRY</text>
+<text class="m" x="1160" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">SOURCE: GITHUB REST API &#183; AS OF 2026-11-24</text>
+<line x1="40" y1="58" x2="1160" y2="58" stroke="#16202C"/>
+<text class="m" x="62" y="112" fill="#D7E3F0" font-size="32" font-weight="600">87</text>
+<rect x="62" y="126" width="26" height="2.5" rx="1.25" fill="#4CC2FF"/>
+<text class="m" x="62" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">PUBLIC REPOSITORIES</text>
+<line x1="227" y1="74" x2="227" y2="166" stroke="#16202C"/>
+<text class="m" x="249" y="112" fill="#D7E3F0" font-size="32" font-weight="600">62</text>
+<rect x="249" y="126" width="26" height="2.5" rx="1.25" fill="#34D399"/>
+<text class="m" x="249" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">STARS RECEIVED</text>
+<line x1="413" y1="74" x2="413" y2="166" stroke="#16202C"/>
+<text class="m" x="435" y="112" fill="#D7E3F0" font-size="32" font-weight="600">2</text>
+<rect x="435" y="126" width="26" height="2.5" rx="1.25" fill="#A78BFA"/>
+<text class="m" x="435" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">FOLLOWERS</text>
+<line x1="600" y1="74" x2="600" y2="166" stroke="#16202C"/>
+<text class="m" x="622" y="112" fill="#D7E3F0" font-size="32" font-weight="600">12</text>
+<rect x="622" y="126" width="26" height="2.5" rx="1.25" fill="#F5A524"/>
+<text class="m" x="622" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">LANGUAGES USED</text>
+<line x1="787" y1="74" x2="787" y2="166" stroke="#16202C"/>
+<text class="m" x="809" y="112" fill="#D7E3F0" font-size="32" font-weight="600">41</text>
+<rect x="809" y="126" width="26" height="2.5" rx="1.25" fill="#2DD4BF"/>
+<text class="m" x="809" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">PUSHED / 90 DAYS</text>
+<line x1="973" y1="74" x2="973" y2="166" stroke="#16202C"/>
+<text class="m" x="995" y="112" fill="#D7E3F0" font-size="32" font-weight="600">2024</text>
+<rect x="995" y="126" width="26" height="2.5" rx="1.25" fill="#60A5FA"/>
+<text class="m" x="995" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">MEMBER SINCE</text>
+<rect x="0.5" y="0.5" width="1199" height="189" fill="none" stroke="#1B2735"/>
+</svg>

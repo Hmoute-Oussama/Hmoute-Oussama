@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"
+     role="img" aria-label="Technical ecosystem: interface, service, intelligence, assurance, runtime, data">
+  <title>Technical ecosystem - six layers of a working stack</title>
+
+  <defs>
+    <pattern id="e-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#141E29" stroke-width="1"/>
+    </pattern>
+    <style>
+      .em{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .es{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .e-fade{opacity:0;animation:efade .75s ease forwards}
+      @keyframes efade{to{opacity:1}}
+      .e-flow{stroke-dasharray:5 9;animation:eflow 2.4s linear infinite}
+      @keyframes eflow{to{stroke-dashoffset:-42}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="600" fill="#0A0E14"/>
+  <rect width="1200" height="600" fill="url(#e-grid)"/>
+
+  <text class="em" x="40" y="42" fill="#3C4C5E" font-size="11" letter-spacing="3">03 / TECHNICAL ECOSYSTEM</text>
+  <text class="es" x="40" y="70" fill="#8FA3B8" font-size="15">Not a logo wall. Each layer has one job and hands work to the next.</text>
+  <line x1="40" y1="88" x2="1160" y2="88" stroke="#16202C"/>
+
+  <!-- stack flow -->
+  <path class="e-flow" fill="none" stroke="#2E4257" stroke-width="1.2" d="M198 104V546"/>
+
+  <!-- band 1 -->
+  <g class="e-fade" style="animation-delay:.1s">
+    <rect x="210" y="104" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="104" width="2" height="64" fill="#60A5FA"/>
+    <text class="em" x="54" y="134" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">INTERFACE</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="121" width="56" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="140">React</text>
+      <rect x="278" y="121" width="68" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="294" y="140">Next.js</text>
+      <rect x="358" y="121" width="118" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="374" y="140">Blade / Laravel</text>
+      <rect x="488" y="121" width="88" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="504" y="140">HTML / CSS</text>
+      <rect x="588" y="121" width="50" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="604" y="140">Vite</text>
+    </g>
+    <text class="em" x="1150" y="141" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">web surfaces</text>
+  </g>
+
+  <!-- band 2 -->
+  <g class="e-fade" style="animation-delay:.2s">
+    <rect x="210" y="180" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="180" width="2" height="64" fill="#4CC2FF"/>
+    <text class="em" x="54" y="210" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">SERVICE</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="197" width="68" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="216">FastAPI</text>
+      <rect x="290" y="197" width="56" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="306" y="216">Flask</text>
+      <rect x="358" y="197" width="68" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="374" y="216">Express</text>
+      <rect x="438" y="197" width="106" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="454" y="216">Java services</text>
+      <rect x="556" y="197" width="50" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="572" y="216">REST</text>
+      <rect x="618" y="197" width="88" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="634" y="216">WebSockets</text>
+    </g>
+    <text class="em" x="1150" y="217" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">typed APIs and service boundaries</text>
+  </g>
+
+  <!-- band 3 -->
+  <g class="e-fade" style="animation-delay:.3s">
+    <rect x="210" y="256" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="256" width="2" height="64" fill="#A78BFA"/>
+    <text class="em" x="54" y="286" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">INTELLIGENCE</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="273" width="88" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="292">LLM agents</text>
+      <rect x="310" y="273" width="44" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="326" y="292">MCP</text>
+      <rect x="366" y="273" width="106" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="382" y="292">GBNF grammars</text>
+      <rect x="484" y="273" width="112" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="500" y="292">GGUF inference</text>
+      <rect x="608" y="273" width="106" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="624" y="292">vision models</text>
+    </g>
+    <text class="em" x="1150" y="293" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">constrained generation over real project state</text>
+  </g>
+
+  <!-- band 4 -->
+  <g class="e-fade" style="animation-delay:.4s">
+    <rect x="210" y="332" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="332" width="2" height="64" fill="#34D399"/>
+    <text class="em" x="54" y="362" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">ASSURANCE</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="349" width="138" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="368">claim verification</text>
+      <rect x="360" y="349" width="118" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="376" y="368">secret scanning</text>
+      <rect x="490" y="349" width="118" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="506" y="368">packet analysis</text>
+      <rect x="620" y="349" width="105" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="636" y="368">DevSecOps</text>
+      <rect x="737" y="349" width="117" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="753" y="368">red teaming</text>
+    </g>
+    <text class="em" x="1150" y="369" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">evidence over confidence</text>
+  </g>
+
+  <!-- band 5 -->
+  <g class="e-fade" style="animation-delay:.5s">
+    <rect x="210" y="408" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="408" width="2" height="64" fill="#2DD4BF"/>
+    <text class="em" x="54" y="438" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">RUNTIME</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="425" width="62" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="444">Docker</text>
+      <rect x="284" y="425" width="112" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="300" y="444">GitHub Actions</text>
+      <rect x="408" y="425" width="56" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="424" y="444">Linux</text>
+      <rect x="476" y="425" width="144" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="492" y="444">CI/CD observability</text>
+      <rect x="632" y="425" width="105" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="648" y="444">uv / pipx</text>
+    </g>
+    <text class="em" x="1150" y="445" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">reproducible and automated</text>
+  </g>
+
+  <!-- band 6 -->
+  <g class="e-fade" style="animation-delay:.6s">
+    <rect x="210" y="484" width="950" height="64" rx="8" fill="#0B131C" stroke="#16202C"/>
+    <rect x="40" y="484" width="2" height="64" fill="#F5A524"/>
+    <text class="em" x="54" y="514" fill="#7C8DA0" font-size="10.5" letter-spacing="1.6">DATA</text>
+    <g class="em" font-size="11" fill="#B9C9DA">
+      <rect x="210" y="501" width="62" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="226" y="520">SQLite</text>
+      <rect x="284" y="501" width="88" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="300" y="520">PostgreSQL</text>
+      <rect x="384" y="501" width="56" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="400" y="520">MySQL</text>
+      <rect x="452" y="501" width="98" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="468" y="520">NetworkX</text>
+      <rect x="562" y="501" width="56" height="30" rx="6" fill="#101B26" stroke="#1E2C3A"/>
+      <text x="578" y="520">JSONL</text>
+    </g>
+    <text class="em" x="1150" y="521" fill="#41505F" font-size="10" letter-spacing="1.4" text-anchor="end">local-first, then scale</text>
+  </g>
+
+  <text class="em" x="40" y="574" fill="#3C4C5E" font-size="10" letter-spacing="2">A LAYER IS A RESPONSIBILITY, NOT A CATEGORY OF BADGE</text>
+  <rect x="0.5" y="0.5" width="1199" height="599" fill="none" stroke="#1B2735"/>
+</svg>

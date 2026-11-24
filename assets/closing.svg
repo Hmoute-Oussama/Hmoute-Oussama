@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280"
+     role="img" aria-label="Session signature: whoami and status">
+  <title>Session signature</title>
+
+  <defs>
+    <pattern id="c-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#141E29" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="c-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4CC2FF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4CC2FF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#4CC2FF" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .cm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .c-fade{opacity:0;animation:cfade .8s ease forwards}
+      @keyframes cfade{to{opacity:1}}
+      .c-blink{animation:cblink 1.15s steps(1) infinite}
+      @keyframes cblink{50%{opacity:0}}
+      .c-live{animation:clive 2.4s ease-in-out infinite}
+      @keyframes clive{0%,100%{opacity:.35}50%{opacity:1}}
+      .c-sweep{animation:csweep 4.5s linear infinite}
+      @keyframes csweep{from{transform:translateX(-420px)}to{transform:translateX(1120px)}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="280" fill="#0A0E14"/>
+  <rect width="1200" height="280" fill="url(#c-grid)"/>
+
+  <rect x="60" y="36" width="1080" height="208" rx="10" fill="#0B131C" stroke="#1E2C3A"/>
+  <line x1="60" y1="74" x2="1140" y2="74" stroke="#16202C"/>
+  <rect x="60" y="36" width="3" height="208" rx="1.5" fill="#2E4155"/>
+
+  <text class="cm" x="84" y="60" fill="#5E7386" font-size="10.5" letter-spacing="1.6">~/engineering/signature</text>
+  <circle class="c-live" cx="1042" cy="56" r="4" fill="#34D399"/>
+  <text class="cm" x="1056" y="60" fill="#5E7386" font-size="10.5" letter-spacing="1.6">SESSION OPEN</text>
+
+  <g class="cm">
+    <text class="c-fade" style="animation-delay:.1s" x="84" y="124" fill="#4CC2FF" font-size="13.5">$ whoami</text>
+    <text class="c-fade" style="animation-delay:.35s" x="84" y="152" fill="#E4EDF6" font-size="13.5">oussama hmoute<tspan fill="#5E7386"> / software engineering at ENSAH</tspan></text>
+    <text class="c-fade" style="animation-delay:.6s" x="84" y="190" fill="#4CC2FF" font-size="13.5">$ status</text>
+    <text class="c-fade" style="animation-delay:.85s" x="84" y="218" fill="#8FA3B8" font-size="13.5">building &#183; verifying &#183; shipping</text>
+  </g>
+  <rect class="c-blink" x="298" y="206" width="9" height="15" fill="#4CC2FF" opacity="0.95"/>
+
+  <rect x="60" y="240" width="1080" height="2" rx="1" fill="#16202C"/>
+  <g clip-path="none">
+    <rect class="c-sweep" x="60" y="240" width="420" height="2" fill="url(#c-bar)"/>
+  </g>
+
+  <text class="cm" x="60" y="268" fill="#3C4C5E" font-size="10" letter-spacing="2">TRANSMISSION ENDS &#183; THE REPOSITORIES CONTINUE</text>
+
+  <rect x="0.5" y="0.5" width="1199" height="279" fill="none" stroke="#1B2735"/>
+</svg>

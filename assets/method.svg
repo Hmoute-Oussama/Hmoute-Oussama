@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300"
+     role="img" aria-label="Engineering method: spec, build, verify, ship, observe, repeat">
+  <title>Engineering method - a closed loop</title>
+
+  <defs>
+    <pattern id="m-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#141E29" stroke-width="1"/>
+    </pattern>
+    <style>
+      .mm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .ms{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .m-fade{opacity:0;animation:mfade .8s ease forwards}
+      @keyframes mfade{to{opacity:1}}
+      .m-flow{stroke-dasharray:6 8;animation:mflow 1.9s linear infinite}
+      @keyframes mflow{to{stroke-dashoffset:-28}}
+      .m-flow-slow{stroke-dasharray:4 10;animation:mflow 3.6s linear infinite}
+      .m-pulse{animation:mp 3.2s ease-in-out infinite}
+      @keyframes mp{0%,100%{opacity:.25}50%{opacity:.85}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="300" fill="#0A0E14"/>
+  <rect width="1200" height="300" fill="url(#m-grid)"/>
+
+  <text class="mm" x="40" y="42" fill="#3C4C5E" font-size="11" letter-spacing="3">02 / METHOD</text>
+  <text class="ms" x="40" y="70" fill="#8FA3B8" font-size="15">A loop, not a line. Verification is a stage of building, not an afterthought.</text>
+  <line x1="40" y1="88" x2="1160" y2="88" stroke="#16202C"/>
+
+  <!-- forward edges -->
+  <g fill="none" stroke="#2E4257" stroke-width="1.4">
+    <path class="m-flow" style="animation-delay:.6s" d="M250 145H310"/>
+    <path class="m-flow" style="animation-delay:.8s" d="M460 145H520"/>
+    <path class="m-flow" style="animation-delay:1s"  d="M670 145H730"/>
+    <path class="m-flow" style="animation-delay:1.2s" d="M880 145H940"/>
+  </g>
+  <g fill="#2E4257">
+    <path d="M310 145l-9 -5v10z"/>
+    <path d="M520 145l-9 -5v10z"/>
+    <path d="M730 145l-9 -5v10z"/>
+    <path d="M940 145l-9 -5v10z"/>
+  </g>
+
+  <!-- feedback edge -->
+  <path class="m-flow-slow" fill="none" stroke="#3A5068" stroke-width="1.4"
+        d="M1040 180V244a8 8 0 0 1 -8 8H168a8 8 0 0 1 -8 -8V182"/>
+  <path fill="#3A5068" d="M160 182l-5 9h10z"/>
+  <text class="mm" x="600" y="238" fill="#4C5D70" font-size="10" letter-spacing="2.4" text-anchor="middle">FEEDBACK</text>
+
+  <!-- stages -->
+  <g class="m-fade" style="animation-delay:.15s">
+    <rect x="70" y="110" width="180" height="70" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="70" y="110" width="3" height="70" rx="1.5" fill="#60A5FA"/>
+    <text class="mm" x="88" y="138" fill="#D7E3F0" font-size="13" letter-spacing="2.4">SPEC</text>
+    <text class="mm" x="88" y="160" fill="#6E8095" font-size="9.5">define the contract</text>
+  </g>
+  <g class="m-fade" style="animation-delay:.3s">
+    <rect x="280" y="110" width="180" height="70" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="280" y="110" width="3" height="70" rx="1.5" fill="#4CC2FF"/>
+    <text class="mm" x="298" y="138" fill="#D7E3F0" font-size="13" letter-spacing="2.4">BUILD</text>
+    <text class="mm" x="298" y="160" fill="#6E8095" font-size="9.5">smallest correct change</text>
+  </g>
+  <g class="m-fade" style="animation-delay:.45s">
+    <rect x="490" y="110" width="180" height="70" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="490" y="110" width="3" height="70" rx="1.5" fill="#34D399"/>
+    <rect class="m-pulse" x="490" y="110" width="180" height="70" rx="8" fill="none" stroke="#34D399" stroke-width="1"/>
+    <text class="mm" x="508" y="138" fill="#D7E3F0" font-size="13" letter-spacing="2.4">VERIFY</text>
+    <text class="mm" x="508" y="160" fill="#6E8095" font-size="9.5">evidence, not opinion</text>
+  </g>
+  <g class="m-fade" style="animation-delay:.6s">
+    <rect x="700" y="110" width="180" height="70" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="700" y="110" width="3" height="70" rx="1.5" fill="#2DD4BF"/>
+    <text class="mm" x="718" y="138" fill="#D7E3F0" font-size="13" letter-spacing="2.4">SHIP</text>
+    <text class="mm" x="718" y="160" fill="#6E8095" font-size="9.5">reproducible release</text>
+  </g>
+  <g class="m-fade" style="animation-delay:.75s">
+    <rect x="950" y="110" width="180" height="70" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
+    <rect x="950" y="110" width="3" height="70" rx="1.5" fill="#A78BFA"/>
+    <text class="mm" x="968" y="138" fill="#D7E3F0" font-size="13" letter-spacing="2.4">OBSERVE</text>
+    <text class="mm" x="968" y="160" fill="#6E8095" font-size="9.5">measure, feed back</text>
+  </g>
+
+  <rect x="0.5" y="0.5" width="1199" height="299" fill="none" stroke="#1B2735"/>
+</svg>

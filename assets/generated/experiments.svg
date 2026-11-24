@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 364" width="1200" height="364" role="img" aria-label="Current experiments">
+  <title>Current experiments</title>
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/></pattern>
+    <style>
+      .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+      .fade{opacity:0;animation:fade .7s ease forwards}
+      @keyframes fade{to{opacity:1}}
+      .flow{stroke-dasharray:6 7;animation:flow 1.8s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-26}}
+      .breathe{animation:breathe 3.4s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.25}50%{opacity:.85}}
+    </style>
+  </defs>
+  <rect width="1200" height="364" fill="#0A0E14"/>
+  <rect width="1200" height="364" fill="url(#g)"/>
+<text class="m" x="40" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">06 / CURRENT EXPERIMENTS</text>
+<text class="m" x="1160" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">EDIT config/profile.yml &#183; THIS PANEL IS REGENERATED</text>
+<line x1="40" y1="58" x2="1160" y2="58" stroke="#16202C"/>
+<rect x="40" y="64" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
+<rect x="40" y="64" width="3" height="44" rx="1.5" fill="#4CC2FF"/>
+<text class="m" x="62" y="92" fill="#3C4C5E" font-size="10" letter-spacing="1">01</text>
+<text class="s" x="92" y="83" fill="#D7E3F0" font-size="13" font-weight="500">Reality resources for agents</text>
+<text class="m" x="92" y="100" fill="#6E8095" font-size="9.5">Exposing project state to agents through MCP tools instead of prompting.</text>
+<rect x="40" y="116" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
+<rect x="40" y="116" width="3" height="44" rx="1.5" fill="#A78BFA"/>
+<text class="m" x="62" y="144" fill="#3C4C5E" font-size="10" letter-spacing="1">02</text>
+<text class="s" x="92" y="135" fill="#D7E3F0" font-size="13" font-weight="500">Grammar-constrained extraction</text>
+<text class="m" x="92" y="152" fill="#6E8095" font-size="9.5">GBNF grammars built from a taxonomy so structured output cannot drift.</text>
+<rect x="40" y="168" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
+<rect x="40" y="168" width="3" height="44" rx="1.5" fill="#34D399"/>
+<text class="m" x="62" y="196" fill="#3C4C5E" font-size="10" letter-spacing="1">03</text>
+<text class="s" x="92" y="187" fill="#D7E3F0" font-size="13" font-weight="500">Event-sourced execution models</text>
+<text class="m" x="92" y="204" fill="#6E8095" font-size="9.5">Modelling pipelines as a pure reducer over an event stream.</text>
+<rect x="40" y="220" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
+<rect x="40" y="220" width="3" height="44" rx="1.5" fill="#F5A524"/>
+<text class="m" x="62" y="248" fill="#3C4C5E" font-size="10" letter-spacing="1">04</text>
+<text class="s" x="92" y="239" fill="#D7E3F0" font-size="13" font-weight="500">Agent behavioural baselines</text>
+<text class="m" x="92" y="256" fill="#6E8095" font-size="9.5">Snapshotting the file, command and tool footprint of a real agent.</text>
+<rect x="40" y="272" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
+<rect x="40" y="272" width="3" height="44" rx="1.5" fill="#2DD4BF"/>
+<text class="m" x="62" y="300" fill="#3C4C5E" font-size="10" letter-spacing="1">05</text>
+<text class="s" x="92" y="291" fill="#D7E3F0" font-size="13" font-weight="500">Geolocation evidence pipelines</text>
+<text class="m" x="92" y="308" fill="#6E8095" font-size="9.5">Studying how metadata, imagery and text signals combine into a location.</text>
+<text class="m" x="40" y="350" fill="#3C4C5E" font-size="9" letter-spacing="1.4">5 ACTIVE THREADS &#183; TRACKED IN config/profile.yml, RENDERED AT BUILD TIME</text>
+<rect x="0.5" y="0.5" width="1199" height="363" fill="none" stroke="#1B2735"/>
+</svg>
