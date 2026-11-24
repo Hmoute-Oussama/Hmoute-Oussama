@@ -402,7 +402,7 @@
 <rect x="1034" y="113" width="13" height="13" rx="2.5" fill="#14384A"/>
 <rect x="1034" y="130" width="13" height="13" rx="2.5" fill="#14384A"/>
 <text class="m" x="40" y="246" fill="#3C4C5E" font-size="9.5" letter-spacing="1.6">CONTRIBUTIONS (12M)</text>
-<text class="m" x="40" y="274" fill="#D7E3F0" font-size="24" font-weight="600">314</text>
+<text class="m" x="40" y="274" fill="#D7E3F0" font-size="24" font-weight="600">316</text>
 <rect x="40" y="284" width="26" height="2" rx="1" fill="#4CC2FF"/>
 <line x1="280" y1="236" x2="280" y2="284" stroke="#16202C"/>
 <text class="m" x="300" y="246" fill="#3C4C5E" font-size="9.5" letter-spacing="1.6">ACTIVE DAYS</text>

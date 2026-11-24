@@ -19,7 +19,7 @@
 <text class="m" x="40" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">05 / TELEMETRY</text>
 <text class="m" x="1160" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">SOURCE: GITHUB REST API &#183; AS OF 2026-11-24</text>
 <line x1="40" y1="58" x2="1160" y2="58" stroke="#16202C"/>
-<text class="m" x="62" y="112" fill="#D7E3F0" font-size="32" font-weight="600">87</text>
+<text class="m" x="62" y="112" fill="#D7E3F0" font-size="32" font-weight="600">88</text>
 <rect x="62" y="126" width="26" height="2.5" rx="1.25" fill="#4CC2FF"/>
 <text class="m" x="62" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">PUBLIC REPOSITORIES</text>
 <line x1="227" y1="74" x2="227" y2="166" stroke="#16202C"/>
@@ -35,7 +35,7 @@
 <rect x="622" y="126" width="26" height="2.5" rx="1.25" fill="#F5A524"/>
 <text class="m" x="622" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">LANGUAGES USED</text>
 <line x1="787" y1="74" x2="787" y2="166" stroke="#16202C"/>
-<text class="m" x="809" y="112" fill="#D7E3F0" font-size="32" font-weight="600">41</text>
+<text class="m" x="809" y="112" fill="#D7E3F0" font-size="32" font-weight="600">43</text>
 <rect x="809" y="126" width="26" height="2.5" rx="1.25" fill="#2DD4BF"/>
 <text class="m" x="809" y="150" fill="#3C4C5E" font-size="9.5" letter-spacing="1.5">PUSHED / 90 DAYS</text>
 <line x1="973" y1="74" x2="973" y2="166" stroke="#16202C"/>
