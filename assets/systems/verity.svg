@@ -4,97 +4,119 @@
   <title>VERITY architecture</title>
 
   <defs>
-    <pattern id="v-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/>
-    </pattern>
+    <pattern id="lat" width="48" height="27.7128" patternUnits="userSpaceOnUse" fill="none" stroke="#150F2C" stroke-width="1" opacity="0.85"><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(0,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(48,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,13.8564)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,-13.8564)"/></pattern>
+    <pattern id="lat2" width="156" height="90.0666" patternUnits="userSpaceOnUse" fill="none" stroke="#1B1338" stroke-width="1" opacity="0.5"><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(0,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(156,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,45.0333)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,-45.0333)"/></pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9D6BFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E879F9" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#9D6BFF" stop-opacity="0"/>
+    </linearGradient>
     <style>
-      .vm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
-      .v-fade{opacity:0;animation:vfade .7s ease forwards}
-      @keyframes vfade{to{opacity:1}}
-      .v-flow{stroke-dasharray:6 7;animation:vflow 1.8s linear infinite}
-      @keyframes vflow{to{stroke-dashoffset:-26}}
-      .v-pulse{animation:vp 3.4s ease-in-out infinite}
-      @keyframes vp{0%,100%{opacity:.25}50%{opacity:.85}}
+      .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .fade{animation:fade .85s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes fade{from{opacity:0}}
+      .draw{stroke-dasharray:1;animation:draw 1.7s cubic-bezier(.3,.7,.3,1) both}
+      @keyframes draw{from{stroke-dashoffset:1}}
+      .flow{stroke-dasharray:5 9;animation:flow 2.3s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-56}}
+      .flow-r{stroke-dasharray:4 11;animation:flow-r 3.4s linear infinite}
+      @keyframes flow-r{to{stroke-dashoffset:60}}
+      .breathe{animation:breathe 3.8s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.2}50%{opacity:.9}}
+      .pulse{animation:pulse 2.8s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.32}50%{opacity:1}}
+      @media (prefers-reduced-motion: reduce){
+        .fade,.draw,.flow,.flow-r,.breathe,.pulse{animation:none}
+      }
     </style>
   </defs>
 
-  <rect width="1100" height="330" fill="#0A0E14"/>
-  <rect width="1100" height="330" fill="url(#v-grid)"/>
+  <rect width="1100" height="330" fill="#05030C"/>
+  <rect width="1100" height="330" fill="url(#lat)"/>
+  <rect width="1100" height="330" fill="url(#lat2)"/>
 
-  <text class="vm" x="42" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">Hmoute-Oussama/VERITY</text>
-  <text class="vm" x="1058" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">PYPI v1.0.0 &#183; MIT</text>
-  <line x1="42" y1="50" x2="1058" y2="50" stroke="#16202C"/>
+  <text class="m" x="42" y="36" fill="#66569E" font-size="10.5" letter-spacing="2.4">Hmoute-Oussama/VERITY</text>
+  <text class="m" x="1058" y="36" fill="#66569E" font-size="10.5" letter-spacing="2.4" text-anchor="end">PYPI v1.0.0 &#183; MIT</text>
+  <path class="draw" pathLength="1" d="M42 50H1058" fill="none" stroke="#1E1544"/>
 
-  <!-- re-verify loop -->
-  <path class="v-flow" fill="none" stroke="#3A5068" stroke-width="1.2" d="M754 92V66H338v26"/>
-  <path fill="#3A5068" d="M338 92l-5 -9h10z"/>
-  <text class="vm" x="546" y="60" fill="#4C5D70" font-size="9.5" letter-spacing="1.6" text-anchor="middle">re-verify on change</text>
+  <g class="fade" style="animation-delay:.2s">
+    <!-- re-verify loop -->
+    <path class="flow-r" fill="none" stroke="#54409C" stroke-width="1.2" d="M754 92V66H338v26"/>
+    <path fill="#54409C" d="M338 92l-5 -9h10z"/>
+    <text class="m" x="546" y="60" fill="#9486CC" font-size="9.5" letter-spacing="1.6" text-anchor="middle">re-verify on change</text>
 
-  <!-- forward edges -->
-  <g fill="none" stroke="#2E4257" stroke-width="1.3">
-    <path class="v-flow" style="animation-delay:.4s" d="M218 128H242"/>
-    <path class="v-flow" style="animation-delay:.6s" d="M426 128H450"/>
-    <path class="v-flow" style="animation-delay:.8s" d="M634 128H658"/>
-    <path class="v-flow" style="animation-delay:1s"  d="M842 128H866"/>
-  </g>
-  <g fill="#2E4257">
-    <path d="M246 128l-9 -5v10z"/>
-    <path d="M454 128l-9 -5v10z"/>
-    <path d="M662 128l-9 -5v10z"/>
-    <path d="M870 128l-9 -5v10z"/>
+    <!-- forward edges -->
+    <g fill="none" stroke="#3E2C78" stroke-width="1.3">
+      <path class="flow" style="animation-delay:.4s" d="M218 128H242"/>
+      <path class="flow" style="animation-delay:.6s" d="M426 128H450"/>
+      <path class="flow" style="animation-delay:.8s" d="M634 128H658"/>
+      <path class="flow" style="animation-delay:1s"  d="M842 128H866"/>
+    </g>
+    <g fill="#3E2C78">
+      <path d="M246 128l-9 -5v10z"/>
+      <path d="M454 128l-9 -5v10z"/>
+      <path d="M662 128l-9 -5v10z"/>
+      <path d="M870 128l-9 -5v10z"/>
+    </g>
+    <circle r="2.6" fill="#5FD9FF"><animateMotion dur="7s" repeatCount="indefinite" path="M218 128H242"/></circle>
   </g>
 
   <!-- stages -->
-  <g class="v-fade" style="animation-delay:.1s">
-    <rect x="42" y="92" width="176" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="42" y="92" width="3" height="72" rx="1.5" fill="#60A5FA"/>
-    <text class="vm" x="62" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">CAPTURE</text>
-    <text class="vm" x="62" y="144" fill="#6E8095" font-size="9">prose, transcripts, diffs</text>
-  </g>
-  <g class="v-fade" style="animation-delay:.25s">
-    <rect x="250" y="92" width="176" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="250" y="92" width="3" height="72" rx="1.5" fill="#34D399"/>
-    <text class="vm" x="270" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">VERIFY</text>
-    <text class="vm" x="270" y="144" fill="#6E8095" font-size="9">independent checks</text>
-  </g>
-  <g class="v-fade" style="animation-delay:.4s">
-    <rect x="458" y="92" width="176" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="458" y="92" width="3" height="72" rx="1.5" fill="#4CC2FF"/>
-    <text class="vm" x="478" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">RECORD</text>
-    <text class="vm" x="478" y="144" fill="#6E8095" font-size="9">evidence + confidence</text>
-  </g>
-  <g class="v-fade" style="animation-delay:.55s">
-    <rect x="666" y="92" width="176" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="666" y="92" width="3" height="72" rx="1.5" fill="#F5A524"/>
-    <text class="vm" x="686" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">INVALIDATE</text>
-    <text class="vm" x="686" y="144" fill="#6E8095" font-size="9">stale evidence</text>
-  </g>
-  <g class="v-fade" style="animation-delay:.7s">
-    <rect x="874" y="92" width="176" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="874" y="92" width="3" height="72" rx="1.5" fill="#F87171"/>
-    <rect class="v-pulse" x="874" y="92" width="176" height="72" rx="8" fill="none" stroke="#F87171" stroke-width="1"/>
-    <text class="vm" x="894" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">GUARD</text>
-    <text class="vm" x="894" y="144" fill="#6E8095" font-size="9">check before execute</text>
+  <g class="fade" style="animation-delay:.1s">
+    <path d="M42 102L52 92H218V154L208 164H42Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M52 92H218" fill="none" stroke="#5FD9FF" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M42 134L46 130L42 126" fill="none" stroke="#5FD9FF" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="62" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">CAPTURE</text>
+    <text class="m" x="62" y="144" fill="#7A6AB4" font-size="9">prose, transcripts, diffs</text>
+
+    <path d="M250 102L260 92H426V154L416 164H250Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M260 92H426" fill="none" stroke="#9D6BFF" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M250 134L254 130L250 126" fill="none" stroke="#9D6BFF" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="270" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">VERIFY</text>
+    <text class="m" x="270" y="144" fill="#7A6AB4" font-size="9">independent checks</text>
+
+    <path d="M458 102L468 92H634V154L624 164H458Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M468 92H634" fill="none" stroke="#E879F9" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M458 134L462 130L458 126" fill="none" stroke="#E879F9" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="478" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">RECORD</text>
+    <text class="m" x="478" y="144" fill="#7A6AB4" font-size="9">evidence + confidence</text>
+
+    <path d="M666 102L676 92H842V154L832 164H666Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M676 92H842" fill="none" stroke="#C4B5FD" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M666 134L670 130L666 126" fill="none" stroke="#C4B5FD" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="686" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">INVALIDATE</text>
+    <text class="m" x="686" y="144" fill="#7A6AB4" font-size="9">stale evidence</text>
+
+    <path d="M874 102L884 92H1050V154L1040 164H874Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M884 92H1050" fill="none" stroke="#6EF2B0" stroke-width="2.4" stroke-linecap="round"/>
+    <path class="pulse" d="M874 134L878 130L874 126" fill="none" stroke="#6EF2B0" stroke-width="1.4" opacity="0.75"/>
+    <path class="pulse" d="M874 102L884 92H1050V154L1040 164H874Z" fill="none" stroke="#FF6B8A" stroke-width="1"/>
+    <text class="m" x="894" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">GUARD</text>
+    <text class="m" x="894" y="144" fill="#7A6AB4" font-size="9">check before execute</text>
   </g>
 
   <!-- artefacts -->
-  <g class="vm" font-size="10" fill="#8FA3B8">
-    <rect class="v-fade" style="animation-delay:.3s"  x="42"  y="180" width="176" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="v-fade" style="animation-delay:.3s"  x="58"  y="207">prose + diffs &#8594; claims</text>
-    <rect class="v-fade" style="animation-delay:.45s" x="250" y="180" width="176" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="v-fade" style="animation-delay:.45s" x="266" y="207">36 verifiers</text>
-    <rect class="v-fade" style="animation-delay:.6s"  x="458" y="180" width="176" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="v-fade" style="animation-delay:.6s"  x="474" y="207">SQLite evidence store</text>
-    <rect class="v-fade" style="animation-delay:.75s" x="666" y="180" width="176" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="v-fade" style="animation-delay:.75s" x="682" y="207">invalidate on change</text>
-    <rect class="v-fade" style="animation-delay:.9s"  x="874" y="180" width="176" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="v-fade" style="animation-delay:.9s"  x="890" y="207">block / warn / allow</text>
+  <g class="m fade" style="animation-delay:.3s" font-size="10" fill="#AFA3E0">
+    <path d="M42 186L48 180H218V218L212 224H42Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="58" y="207">prose + diffs &#8594; claims</text>
+    <path d="M250 186L256 180H426V218L420 224H250Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="266" y="207">36 verifiers</text>
+    <path d="M458 186L464 180H634V218L628 224H458Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="474" y="207">SQLite evidence store</text>
+    <path d="M666 186L672 180H842V218L836 224H666Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="682" y="207">invalidate on change</text>
+    <path d="M874 186L880 180H1050V218L1044 224H874Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="890" y="207">block / warn / allow</text>
   </g>
 
-  <line x1="42" y1="248" x2="1058" y2="248" stroke="#16202C"/>
-  <text class="vm" x="42" y="272" fill="#5E7386" font-size="10" letter-spacing="1.2">verifiers: code_symbol &#183; code_route &#183; syntax &#183; imports &#183; dependency &#183; test_execution &#183; environment &#183; secret_scan &#183; database_schema &#183; http_probe</text>
-  <text class="vm" x="42" y="294" fill="#5E7386" font-size="10" letter-spacing="1.2">surfaces: typer CLI &#183; MCP stdio server &#183; local dashboard &#183; GitHub Action &#183; pre-commit</text>
-  <text class="vm" x="42" y="316" fill="#3C4C5E" font-size="10" letter-spacing="1.2">integration matrix: fastapi &#183; flask &#183; next.js &#183; docker compose &#183; monorepo &#183; typescript &#183; java &#183; go</text>
+  <g class="fade" style="animation-delay:.4s">
+    <line x1="42" y1="248" x2="1058" y2="248" stroke="#1E1544"/>
+    <text class="m" x="42" y="272" fill="#7A6AB4" font-size="10" letter-spacing="1.2">verifiers: code_symbol &#183; code_route &#183; syntax &#183; imports &#183; dependency &#183; test_execution &#183; environment &#183; secret_scan &#183; database_schema &#183; http_probe</text>
+    <text class="m" x="42" y="294" fill="#7A6AB4" font-size="10" letter-spacing="1.2">surfaces: typer CLI &#183; MCP stdio server &#183; local dashboard &#183; GitHub Action &#183; pre-commit</text>
+    <text class="m" x="42" y="316" fill="#66569E" font-size="10" letter-spacing="1.2">integration matrix: fastapi &#183; flask &#183; next.js &#183; docker compose &#183; monorepo &#183; typescript &#183; java &#183; go</text>
+  </g>
 
-  <rect x="0.5" y="0.5" width="1099" height="329" fill="none" stroke="#1B2735"/>
+  <g class="fade" style="animation-delay:.5s">
+    <path d="M0.5 38L38 0.5H1062L1099.5 38V292L1062 329.5H38L0.5 292Z" fill="none" stroke="#322466"/>
+  </g>
 </svg>

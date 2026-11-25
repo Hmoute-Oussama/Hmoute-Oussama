@@ -6,28 +6,35 @@ How the profile is put together, and why it is put together that way.
 
 ## 1. Design system
 
-One visual language, applied everywhere: a **systems blueprint**.
+One visual language, applied everywhere: **xenotech** — a violet-black void over a
+recessed hexagonal lattice, chamfered plates instead of rounded ones, and a
+bioluminescent signal set.
 
 | Token | Value | Role |
 |:--|:--|:--|
-| canvas | `#0A0E14` | every asset background |
-| grid | `#131C26` | 40px technical grid |
-| rule / frame | `#16202C` / `#1B2735` | separators and outer border |
-| structure | `#2E4257` | edges, connections, spokes |
-| type ramp | `#3C4C5E` → `#5E7386` → `#6E8095` → `#8FA3B8` → `#B9C9DA` → `#D7E3F0` | label → body → headline, dim to bright |
-| signals | `#4CC2FF` `#2DD4BF` `#34D399` `#F5A524` `#F87171` `#A78BFA` `#60A5FA` | one meaning each, never decoration |
-| heatmap | `#101821` `#14384A` `#1C5F7E` `#2E93BF` `#4CC2FF` | contribution levels 0–4 |
+| void | `#05030C` | every asset background |
+| lattice | `#150F2C` / `#1B1338` | recessed hexagonal grid, two scales (r=16, r=52) |
+| plates | `#0F0A1E` / `#140E27` / `#0B0716` | panel bodies and recessed wells |
+| frame | `#261B4E` / `#322466` / `#3E2C78` / `#54409C` | plate borders, page frame, edges, soft edges |
+| type ramp | `#66569E` → `#7A6AB4` → `#9486CC` → `#AFA3E0` → `#CFC5F7` → `#F2ECFF` | label → body → headline, dim to bright |
+| signals | `#9D6BFF` `#E879F9` `#6EF2B0` `#FFB454` `#FF6B8A` `#5FD9FF` `#C4B5FD` | one meaning each, never decoration |
+| heatmap | `#0B0716` `#2B1A5E` `#4B2AA8` `#7C4AE0` `#C58CFF` | contribution levels 0–4 |
 
 Rules that keep it coherent:
 
+* **No rounded rectangles anywhere.** Every plate, chip, bar and badge is chamfered on
+  the diagonal: `corners="all"` for chrome, `tl-br` / `tr-bl` to give a step its
+  direction. A cut corner is the one shape signal that separates this from a dashboard.
 * **Two typefaces only.** Monospace for anything the machine would emit (identifiers,
   file names, counts, labels); system sans for the few human sentences.
-* **No gradients except one.** A single azure fade rule in the hero. No neon, no glow
-  beyond one radial wash, no drop shadows.
-* **Every colour carries a meaning.** A colour is never chosen because it looks good in
+* **No gradients beyond three shared ones.** One radial `core` wash, one `beam` sweep and
+  one `arc`. No neon, no drop shadows.
+* **Every colour carries a meaning.** A signal is never chosen because it looks good in
   isolation; it is chosen because it means the same thing in the next asset.
-* **Motion is functional.** Draw-on explains structure, flow implies direction, a pulse
-  marks a gate or a live state. Nothing loops for decoration.
+* **Motion is functional, and correct at rest.** Draw-on explains structure, flow implies
+  direction, a pulse marks a gate or a live state. Every animation class uses
+  `animation-fill-mode: both` and describes only the `from` state, so a stripped
+  animation or `prefers-reduced-motion` still shows the finished frame.
 * **No emoji.** Ever, anywhere in the profile.
 
 The palette is defined once, in [`scripts/theme.py`](../scripts/theme.py), and imported by
@@ -82,21 +89,23 @@ which is why they can be hand-written safely.
 
 | Asset | Size | What moves |
 |:--|:--|:--|
-| `hero.svg` | 1200×380 | spokes draw on in sequence, a typewriter clip releases the statement, six labelled domain nodes fade in, three pulses travel the spokes, a scanline sweeps the canvas, the orbit ring rotates |
-| `universe.svg` | 1200×560 | spokes draw outward from the hub, relationship edges animate, pulses travel each edge, satellites orbit two ellipses |
-| `method.svg` | 1200×300 | the forward chain flows, the feedback arc back to SPEC flows, the VERIFY gate breathes |
-| `ecosystem.svg` | 1200×600 | bands fade in top to bottom, the vertical spine flows |
-| `closing.svg` | 1200×280 | terminal cursor blinks, session dot pulses, a status bar sweeps |
-| `systems/*.svg` | 1100×330 | stage panels fade in left to right, arrows flow, the terminal stage breathes, the feedback loop flows |
+| `hero.svg` | 1200×380 | spokes draw on in sequence, six hex nodes fade in, three pulses travel the spokes, a concentration beam sweeps the plate, the orbit ring rotates |
+| `universe.svg` | 1200×560 | spokes draw outward from the hub, the relationship ring flows, pulses travel three spokes, satellites orbit two dashed ellipses, the hub and six domain plates fade in |
+| `method.svg` | 1200×300 | the forward chain flows, the feedback arc back to SPEC flows, the VERIFY gate pulses |
+| `ecosystem.svg` | 1200×600 | bands fade in top to bottom, the vertical spine flows, the ASSURANCE band pulses |
+| `closing.svg` | 1200×280 | the cursor blinks, the session dot pulses, the transmission line flows, a beam sweeps the terminal |
+| `systems/*.svg` | 1100×330 | stage plates fade in left to right, forward edges flow, the named stage pulses, the feedback loop flows right to left |
 
 Techniques, all native to SVG and all understood by GitHub's renderer:
 
 * `<animate>` / `<animateMotion>` for element and path-following motion (SMIL).
 * `@keyframes` inside a `<style>` block for fades, flowing dashes and pulses.
-* `stroke-dasharray` + `stroke-dashoffset` animating to `0` for draw-on.
+* `stroke-dasharray` + `stroke-dashoffset` for draw-on, driven by `pathLength="1"` so
+  the animation is proportional to each path's own length rather than a guessed constant.
 * `transform-box: fill-box` with `transform-origin: center` for rotation about an
   element's own centre rather than the canvas origin.
-* A `clipPath` whose `width` is animated to reveal text left to right.
+* Hexagonal tiling: one flat-topped hexagon emitted as a `<pattern>` covers the void at
+  two scales, and the same shape becomes every node and every contribution cell.
 
 ---
 

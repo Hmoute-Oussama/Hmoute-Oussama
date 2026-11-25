@@ -4,77 +4,99 @@
   <title>CI/CD Visualizer architecture</title>
 
   <defs>
-    <pattern id="p-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/>
-    </pattern>
+    <pattern id="lat" width="48" height="27.7128" patternUnits="userSpaceOnUse" fill="none" stroke="#150F2C" stroke-width="1" opacity="0.85"><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(0,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(48,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,13.8564)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,-13.8564)"/></pattern>
+    <pattern id="lat2" width="156" height="90.0666" patternUnits="userSpaceOnUse" fill="none" stroke="#1B1338" stroke-width="1" opacity="0.5"><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(0,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(156,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,45.0333)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,-45.0333)"/></pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9D6BFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E879F9" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#9D6BFF" stop-opacity="0"/>
+    </linearGradient>
     <style>
-      .pm{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
-      .p-fade{opacity:0;animation:pfade .7s ease forwards}
-      @keyframes pfade{to{opacity:1}}
-      .p-flow{stroke-dasharray:6 7;animation:pflow 1.8s linear infinite}
-      @keyframes pflow{to{stroke-dashoffset:-26}}
-      .p-pulse{animation:pp 3.4s ease-in-out infinite}
-      @keyframes pp{0%,100%{opacity:.25}50%{opacity:.85}}
+      .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+      .fade{animation:fade .85s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes fade{from{opacity:0}}
+      .draw{stroke-dasharray:1;animation:draw 1.7s cubic-bezier(.3,.7,.3,1) both}
+      @keyframes draw{from{stroke-dashoffset:1}}
+      .flow{stroke-dasharray:5 9;animation:flow 2.3s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-56}}
+      .flow-r{stroke-dasharray:4 11;animation:flow-r 3.4s linear infinite}
+      @keyframes flow-r{to{stroke-dashoffset:60}}
+      .breathe{animation:breathe 3.8s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.2}50%{opacity:.9}}
+      .pulse{animation:pulse 2.8s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.32}50%{opacity:1}}
+      @media (prefers-reduced-motion: reduce){
+        .fade,.draw,.flow,.flow-r,.breathe,.pulse{animation:none}
+      }
     </style>
   </defs>
 
-  <rect width="1100" height="330" fill="#0A0E14"/>
-  <rect width="1100" height="330" fill="url(#p-grid)"/>
+  <rect width="1100" height="330" fill="#05030C"/>
+  <rect width="1100" height="330" fill="url(#lat)"/>
+  <rect width="1100" height="330" fill="url(#lat2)"/>
 
-  <text class="pm" x="42" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">Hmoute-Oussama/CI-CD-VISUALIZER</text>
-  <text class="pm" x="1058" y="36" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">v0 &#183; SIMULATOR + GITHUB COLLECTOR</text>
-  <line x1="42" y1="50" x2="1058" y2="50" stroke="#16202C"/>
+  <text class="m" x="42" y="36" fill="#66569E" font-size="10.5" letter-spacing="2.4">Hmoute-Oussama/CI-CD-VISUALIZER</text>
+  <text class="m" x="1058" y="36" fill="#66569E" font-size="10.5" letter-spacing="2.4" text-anchor="end">v0 &#183; SIMULATOR + GITHUB COLLECTOR</text>
+  <path class="draw" pathLength="1" d="M42 50H1058" fill="none" stroke="#1E1544"/>
 
-  <!-- replay loop -->
-  <path class="p-flow" fill="none" stroke="#3A5068" stroke-width="1.2" d="M908 92V66H192v26"/>
-  <path fill="#3A5068" d="M192 92l-5 -9h10z"/>
-  <text class="pm" x="550" y="60" fill="#4C5D70" font-size="9.5" letter-spacing="1.6" text-anchor="middle">replay rebuilds the model from the log</text>
+  <g class="fade" style="animation-delay:.2s">
+    <!-- replay loop -->
+    <path class="flow-r" fill="none" stroke="#54409C" stroke-width="1.2" d="M908 92V66H192v26"/>
+    <path fill="#54409C" d="M192 92l-5 -9h10z"/>
+    <text class="m" x="550" y="60" fill="#9486CC" font-size="9.5" letter-spacing="1.6" text-anchor="middle">replay rebuilds the model from the log</text>
 
-  <!-- forward edges -->
-  <g fill="none" stroke="#2E4257" stroke-width="1.3">
-    <path class="p-flow" style="animation-delay:.4s" d="M346 128H392"/>
-    <path class="p-flow" style="animation-delay:.8s" d="M704 128H750"/>
-  </g>
-  <g fill="#2E4257">
-    <path d="M400 128l-9 -5v10z"/>
-    <path d="M758 128l-9 -5v10z"/>
+    <!-- forward edges -->
+    <g fill="none" stroke="#3E2C78" stroke-width="1.3">
+      <path class="flow" style="animation-delay:.4s" d="M346 128H392"/>
+      <path class="flow" style="animation-delay:.8s" d="M704 128H750"/>
+    </g>
+    <g fill="#3E2C78">
+      <path d="M400 128l-9 -5v10z"/>
+      <path d="M758 128l-9 -5v10z"/>
+    </g>
+    <circle r="2.6" fill="#5FD9FF"><animateMotion dur="7s" repeatCount="indefinite" path="M346 128H392"/></circle>
   </g>
 
   <!-- stages -->
-  <g class="p-fade" style="animation-delay:.1s">
-    <rect x="42" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="42" y="92" width="3" height="72" rx="1.5" fill="#4CC2FF"/>
-    <text class="pm" x="62" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">COLLECT</text>
-    <text class="pm" x="62" y="144" fill="#6E8095" font-size="9">GitHub, or the built-in simulator</text>
-  </g>
-  <g class="p-fade" style="animation-delay:.3s">
-    <rect x="400" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="400" y="92" width="3" height="72" rx="1.5" fill="#34D399"/>
-    <text class="pm" x="420" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">REDUCE</text>
-    <text class="pm" x="420" y="144" fill="#6E8095" font-size="9">pure applyEvent(model, event)</text>
-  </g>
-  <g class="p-fade" style="animation-delay:.5s">
-    <rect x="758" y="92" width="300" height="72" rx="8" fill="#0D1620" stroke="#1E2C3A"/>
-    <rect x="758" y="92" width="3" height="72" rx="1.5" fill="#A78BFA"/>
-    <rect class="p-pulse" x="758" y="92" width="300" height="72" rx="8" fill="none" stroke="#A78BFA" stroke-width="1"/>
-    <text class="pm" x="778" y="122" fill="#D7E3F0" font-size="12" letter-spacing="2">PROJECT</text>
-    <text class="pm" x="778" y="144" fill="#6E8095" font-size="9">DAG, replay, time travel, regression</text>
+  <g class="fade" style="animation-delay:.1s">
+    <path d="M42 102L52 92H342V154L332 164H42Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M52 92H342" fill="none" stroke="#5FD9FF" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M42 134L46 130L42 126" fill="none" stroke="#5FD9FF" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="62" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">COLLECT</text>
+    <text class="m" x="62" y="144" fill="#7A6AB4" font-size="9">GitHub, or the built-in simulator</text>
+
+    <path d="M400 102L410 92H700V154L690 164H400Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M410 92H700" fill="none" stroke="#9D6BFF" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M400 134L404 130L400 126" fill="none" stroke="#9D6BFF" stroke-width="1.4" opacity="0.75"/>
+    <text class="m" x="420" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">REDUCE</text>
+    <text class="m" x="420" y="144" fill="#7A6AB4" font-size="9">pure applyEvent(model, event)</text>
+
+    <path d="M758 102L768 92H1058V154L1048 164H758Z" fill="#0F0A1E" stroke="#261B4E"/>
+    <path d="M768 92H1058" fill="none" stroke="#E879F9" stroke-width="2.4" stroke-linecap="round"/>
+    <path class="pulse" d="M758 134L762 130L758 126" fill="none" stroke="#E879F9" stroke-width="1.4" opacity="0.75"/>
+    <path class="pulse" d="M758 102L768 92H1058V154L1048 164H758Z" fill="none" stroke="#9D6BFF" stroke-width="1"/>
+    <text class="m" x="778" y="122" fill="#CFC5F7" font-size="12" letter-spacing="2">PROJECT</text>
+    <text class="m" x="778" y="144" fill="#7A6AB4" font-size="9">DAG, replay, time travel, regression</text>
   </g>
 
   <!-- artefacts -->
-  <g class="pm" font-size="10" fill="#8FA3B8">
-    <rect class="p-fade" style="animation-delay:.35s" x="42"  y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="p-fade" style="animation-delay:.35s" x="58"  y="207">one normalised event stream</text>
-    <rect class="p-fade" style="animation-delay:.55s" x="400" y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="p-fade" style="animation-delay:.55s" x="416" y="207">execution model (pure function)</text>
-    <rect class="p-fade" style="animation-delay:.75s" x="758" y="180" width="300" height="44" rx="7" fill="#0B131C" stroke="#16202C"/>
-    <text class="p-fade" style="animation-delay:.75s" x="774" y="207">live DAG &#183; logs &#183; regression panel</text>
+  <g class="m fade" style="animation-delay:.3s" font-size="10" fill="#AFA3E0">
+    <path d="M42 186L48 180H342V218L336 224H42Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="58" y="207">one normalised event stream</text>
+    <path d="M400 186L406 180H700V218L694 224H400Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="416" y="207">execution model (pure function)</text>
+    <path d="M758 186L764 180H1058V218L1052 224H758Z" fill="#0B0716" stroke="#261B4E"/>
+    <text x="774" y="207">live DAG &#183; logs &#183; regression panel</text>
   </g>
 
-  <line x1="42" y1="248" x2="1058" y2="248" stroke="#16202C"/>
-  <text class="pm" x="42" y="272" fill="#5E7386" font-size="10" letter-spacing="1.2">invariants: events are the only source of truth &#183; the UI never calls GitHub &#183; model = f(events)</text>
-  <text class="pm" x="42" y="294" fill="#5E7386" font-size="10" letter-spacing="1.2">flight recorder: JSONL on disk &#183; a new CI provider is a new collector, nothing else changes</text>
-  <text class="pm" x="42" y="316" fill="#3C4C5E" font-size="10" letter-spacing="1.2">surface: React 18 + Vite + zustand &#183; Express + ws &#183; npm workspaces &#183; hand-rolled SVG graph</text>
+  <g class="fade" style="animation-delay:.4s">
+    <line x1="42" y1="248" x2="1058" y2="248" stroke="#1E1544"/>
+    <text class="m" x="42" y="272" fill="#7A6AB4" font-size="10" letter-spacing="1.2">invariants: events are the only source of truth &#183; the UI never calls GitHub &#183; model = f(events)</text>
+    <text class="m" x="42" y="294" fill="#7A6AB4" font-size="10" letter-spacing="1.2">flight recorder: JSONL on disk &#183; a new CI provider is a new collector, nothing else changes</text>
+    <text class="m" x="42" y="316" fill="#66569E" font-size="10" letter-spacing="1.2">surface: React 18 + Vite + zustand &#183; Express + ws &#183; npm workspaces &#183; hand-rolled SVG graph</text>
+  </g>
 
-  <rect x="0.5" y="0.5" width="1099" height="329" fill="none" stroke="#1B2735"/>
+  <g class="fade" style="animation-delay:.5s">
+    <path d="M0.5 38L38 0.5H1062L1099.5 38V292L1062 329.5H38L0.5 292Z" fill="none" stroke="#322466"/>
+  </g>
 </svg>

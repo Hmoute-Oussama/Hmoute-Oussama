@@ -2,48 +2,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 364" width="1200" height="364" role="img" aria-label="Current experiments">
   <title>Current experiments</title>
   <defs>
-    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#131C26" stroke-width="1"/></pattern>
+    <pattern id="lat" width="48" height="27.7128" patternUnits="userSpaceOnUse" fill="none" stroke="#150F2C" stroke-width="1" opacity="0.85"><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(0,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(48,0)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,13.8564)"/><path d="M16 0L8.0 13.8564L-8.0 13.8564L-16 0L-8.0 -13.8564L8.0 -13.8564Z" transform="translate(24.0,-13.8564)"/></pattern>
+    <pattern id="lat2" width="156" height="90.0666" patternUnits="userSpaceOnUse" fill="none" stroke="#1B1338" stroke-width="1" opacity="0.5"><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(0,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(156,0)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,45.0333)"/><path d="M52 0L26.0 45.0333L-26.0 45.0333L-52 0L-26.0 -45.0333L26.0 -45.0333Z" transform="translate(78.0,-45.0333)"/></pattern>
+    <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#9D6BFF" stop-opacity="0.17"/>
+      <stop offset="0.55" stop-color="#E879F9" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#9D6BFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9D6BFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E879F9" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#9D6BFF" stop-opacity="0"/>
+    </linearGradient>
     <style>
       .m{font-family:ui-monospace,'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
       .s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-      .fade{opacity:0;animation:fade .7s ease forwards}
-      @keyframes fade{to{opacity:1}}
-      .flow{stroke-dasharray:6 7;animation:flow 1.8s linear infinite}
-      @keyframes flow{to{stroke-dashoffset:-26}}
-      .breathe{animation:breathe 3.4s ease-in-out infinite}
-      @keyframes breathe{0%,100%{opacity:.25}50%{opacity:.85}}
+      .fade{animation:fade .85s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes fade{from{opacity:0}}
+      .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes rise{from{opacity:0;transform:translateY(9px)}}
+      .grow{transform-box:fill-box;transform-origin:left center;animation:grow 1.25s cubic-bezier(.2,.8,.2,1) both}
+      @keyframes grow{from{transform:scaleX(0)}}
+      .draw{stroke-dasharray:1;animation:draw 1.7s cubic-bezier(.3,.7,.3,1) both}
+      @keyframes draw{from{stroke-dashoffset:1}}
+      .flow{stroke-dasharray:5 9;animation:flow 2.3s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-56}}
+      .flow-r{stroke-dasharray:4 11;animation:flow-r 3.4s linear infinite}
+      @keyframes flow-r{to{stroke-dashoffset:60}}
+      .breathe{animation:breathe 3.8s ease-in-out infinite}
+      @keyframes breathe{0%,100%{opacity:.2}50%{opacity:.9}}
+      .pulse{animation:pulse 2.8s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.32}50%{opacity:1}}
+      .blink{animation:blink 1.1s steps(1) infinite}
+      @keyframes blink{50%{opacity:0}}
+      .glitch{animation:glitch 7s steps(1) infinite}
+      @keyframes glitch{0%,93%,100%{opacity:1}94%{opacity:.25}95%{opacity:1}96%{opacity:.45}97%{opacity:1}}
+      .drift{animation:drift 19s ease-in-out infinite}
+      @keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+      @media (prefers-reduced-motion: reduce){
+        .fade,.rise,.grow,.draw,.flow,.flow-r,.breathe,.pulse,.blink,.glitch,.drift{animation:none}
+      }
     </style>
   </defs>
-  <rect width="1200" height="364" fill="#0A0E14"/>
-  <rect width="1200" height="364" fill="url(#g)"/>
-<text class="m" x="40" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4">06 / CURRENT EXPERIMENTS</text>
-<text class="m" x="1160" y="42" fill="#3C4C5E" font-size="10.5" letter-spacing="2.4" text-anchor="end">EDIT config/profile.yml &#183; THIS PANEL IS REGENERATED</text>
-<line x1="40" y1="58" x2="1160" y2="58" stroke="#16202C"/>
-<rect x="40" y="64" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
-<rect x="40" y="64" width="3" height="44" rx="1.5" fill="#4CC2FF"/>
-<text class="m" x="62" y="92" fill="#3C4C5E" font-size="10" letter-spacing="1">01</text>
-<text class="s" x="92" y="83" fill="#D7E3F0" font-size="13" font-weight="500">Reality resources for agents</text>
-<text class="m" x="92" y="100" fill="#6E8095" font-size="9.5">Exposing project state to agents through MCP tools instead of prompting.</text>
-<rect x="40" y="116" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
-<rect x="40" y="116" width="3" height="44" rx="1.5" fill="#A78BFA"/>
-<text class="m" x="62" y="144" fill="#3C4C5E" font-size="10" letter-spacing="1">02</text>
-<text class="s" x="92" y="135" fill="#D7E3F0" font-size="13" font-weight="500">Grammar-constrained extraction</text>
-<text class="m" x="92" y="152" fill="#6E8095" font-size="9.5">GBNF grammars built from a taxonomy so structured output cannot drift.</text>
-<rect x="40" y="168" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
-<rect x="40" y="168" width="3" height="44" rx="1.5" fill="#34D399"/>
-<text class="m" x="62" y="196" fill="#3C4C5E" font-size="10" letter-spacing="1">03</text>
-<text class="s" x="92" y="187" fill="#D7E3F0" font-size="13" font-weight="500">Event-sourced execution models</text>
-<text class="m" x="92" y="204" fill="#6E8095" font-size="9.5">Modelling pipelines as a pure reducer over an event stream.</text>
-<rect x="40" y="220" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
-<rect x="40" y="220" width="3" height="44" rx="1.5" fill="#F5A524"/>
-<text class="m" x="62" y="248" fill="#3C4C5E" font-size="10" letter-spacing="1">04</text>
-<text class="s" x="92" y="239" fill="#D7E3F0" font-size="13" font-weight="500">Agent behavioural baselines</text>
-<text class="m" x="92" y="256" fill="#6E8095" font-size="9.5">Snapshotting the file, command and tool footprint of a real agent.</text>
-<rect x="40" y="272" width="1120" height="44" rx="7" fill="#0B131C" stroke="#1E2C3A"/>
-<rect x="40" y="272" width="3" height="44" rx="1.5" fill="#2DD4BF"/>
-<text class="m" x="62" y="300" fill="#3C4C5E" font-size="10" letter-spacing="1">05</text>
-<text class="s" x="92" y="291" fill="#D7E3F0" font-size="13" font-weight="500">Geolocation evidence pipelines</text>
-<text class="m" x="92" y="308" fill="#6E8095" font-size="9.5">Studying how metadata, imagery and text signals combine into a location.</text>
-<text class="m" x="40" y="350" fill="#3C4C5E" font-size="9" letter-spacing="1.4">5 ACTIVE THREADS &#183; TRACKED IN config/profile.yml, RENDERED AT BUILD TIME</text>
-<rect x="0.5" y="0.5" width="1199" height="363" fill="none" stroke="#1B2735"/>
+  <rect width="1200" height="364" fill="#05030C"/>
+  <rect width="1200" height="364" fill="url(#lat)"/>
+  <rect width="1200" height="364" fill="url(#lat2)"/>
+<circle cx="168.00000000000003" cy="40" r="408.00000000000006" fill="url(#core)"/>
+<text class="m" x="40" y="42" fill="#66569E" font-size="10.5" letter-spacing="2.4">06 / CURRENT EXPERIMENTS</text>
+<text class="m" x="1160" y="42" fill="#66569E" font-size="10.5" letter-spacing="2.4" text-anchor="end">EDIT config/profile.yml &#183; THIS PANEL IS REGENERATED</text>
+<path d="M40 58H1160" fill="none" stroke="#1E1544" class="draw" pathLength="1"/>
+<path class="fade" style="animation-delay:0.0s" d="M40 66H1150L1160 76V110H50L40 100Z" fill="#0F0A1E" stroke="#261B4E" stroke-width="1"/>
+<path transform="translate(74,88)" d="M13 0L6.5 11.2583L-6.5 11.2583L-13 0L-6.5 -11.2583L6.5 -11.2583Z" fill="#0B0716" stroke="#5FD9FF" stroke-width="1"/>
+<text class="m" x="74" y="92" fill="#5FD9FF" font-size="10.5" text-anchor="middle">01</text>
+<text class="s" x="104" y="86" fill="#F2ECFF" font-size="13" font-weight="500">Reality resources for agents</text>
+<text class="m" x="104" y="103" fill="#9486CC" font-size="9.5">Exposing project state to agents through MCP tools instead of prompting.</text>
+<circle class="pulse" style="animation-delay:0.0s" cx="1136" cy="88" r="3" fill="#5FD9FF"/>
+<path class="fade" style="animation-delay:0.08s" d="M40 118H1150L1160 128V162H50L40 152Z" fill="#0F0A1E" stroke="#261B4E" stroke-width="1"/>
+<path transform="translate(74,140)" d="M13 0L6.5 11.2583L-6.5 11.2583L-13 0L-6.5 -11.2583L6.5 -11.2583Z" fill="#0B0716" stroke="#9D6BFF" stroke-width="1"/>
+<text class="m" x="74" y="144" fill="#9D6BFF" font-size="10.5" text-anchor="middle">02</text>
+<text class="s" x="104" y="138" fill="#F2ECFF" font-size="13" font-weight="500">Grammar-constrained extraction</text>
+<text class="m" x="104" y="155" fill="#9486CC" font-size="9.5">GBNF grammars built from a taxonomy so structured output cannot drift.</text>
+<circle class="pulse" style="animation-delay:0.45s" cx="1136" cy="140" r="3" fill="#9D6BFF"/>
+<path class="fade" style="animation-delay:0.16s" d="M40 170H1150L1160 180V214H50L40 204Z" fill="#0F0A1E" stroke="#261B4E" stroke-width="1"/>
+<path transform="translate(74,192)" d="M13 0L6.5 11.2583L-6.5 11.2583L-13 0L-6.5 -11.2583L6.5 -11.2583Z" fill="#0B0716" stroke="#E879F9" stroke-width="1"/>
+<text class="m" x="74" y="196" fill="#E879F9" font-size="10.5" text-anchor="middle">03</text>
+<text class="s" x="104" y="190" fill="#F2ECFF" font-size="13" font-weight="500">Event-sourced execution models</text>
+<text class="m" x="104" y="207" fill="#9486CC" font-size="9.5">Modelling pipelines as a pure reducer over an event stream.</text>
+<circle class="pulse" style="animation-delay:0.9s" cx="1136" cy="192" r="3" fill="#E879F9"/>
+<path class="fade" style="animation-delay:0.24s" d="M40 222H1150L1160 232V266H50L40 256Z" fill="#0F0A1E" stroke="#261B4E" stroke-width="1"/>
+<path transform="translate(74,244)" d="M13 0L6.5 11.2583L-6.5 11.2583L-13 0L-6.5 -11.2583L6.5 -11.2583Z" fill="#0B0716" stroke="#C4B5FD" stroke-width="1"/>
+<text class="m" x="74" y="248" fill="#C4B5FD" font-size="10.5" text-anchor="middle">04</text>
+<text class="s" x="104" y="242" fill="#F2ECFF" font-size="13" font-weight="500">Agent behavioural baselines</text>
+<text class="m" x="104" y="259" fill="#9486CC" font-size="9.5">Snapshotting the file, command and tool footprint of a real agent.</text>
+<circle class="pulse" style="animation-delay:1.35s" cx="1136" cy="244" r="3" fill="#C4B5FD"/>
+<path class="fade" style="animation-delay:0.32s" d="M40 274H1150L1160 284V318H50L40 308Z" fill="#0F0A1E" stroke="#261B4E" stroke-width="1"/>
+<path transform="translate(74,296)" d="M13 0L6.5 11.2583L-6.5 11.2583L-13 0L-6.5 -11.2583L6.5 -11.2583Z" fill="#0B0716" stroke="#6EF2B0" stroke-width="1"/>
+<text class="m" x="74" y="300" fill="#6EF2B0" font-size="10.5" text-anchor="middle">05</text>
+<text class="s" x="104" y="294" fill="#F2ECFF" font-size="13" font-weight="500">Geolocation evidence pipelines</text>
+<text class="m" x="104" y="311" fill="#9486CC" font-size="9.5">Studying how metadata, imagery and text signals combine into a location.</text>
+<circle class="pulse" style="animation-delay:1.8s" cx="1136" cy="296" r="3" fill="#6EF2B0"/>
+<text class="m" x="40" y="348" fill="#66569E" font-size="9" letter-spacing="1.4">5 ACTIVE THREADS &#183; TRACKED IN config/profile.yml, RENDERED AT BUILD TIME</text>
+<path d="M0.5 42.5L42.5 0.5H1157.5L1199.5 42.5V321.5L1157.5 363.5H42.5L0.5 321.5Z" fill="none" stroke="#322466"/>
 </svg>

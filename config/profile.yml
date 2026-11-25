@@ -67,7 +67,7 @@ projects:
     repo: Hmoute-Oussama/VERITY
     artifact: assets/systems/verity.svg
     tagline: The reality layer for AI coding agents
-    accent: "#34D399"
+    accent: "#6EF2B0"
     problem: >-
       A coding agent can confidently report work that is not present, tests
       that never ran, and commands whose prerequisites do not exist. Claims
@@ -95,7 +95,7 @@ projects:
     repo: Hmoute-Oussama/AgentSnap
     artifact: assets/systems/agentsnap.svg
     tagline: Unit tests for AI agents
-    accent: "#A78BFA"
+    accent: "#9D6BFF"
     problem: >-
       Agent behaviour is ordinary code that happens to be non-deterministic.
       Prompt edits, model updates and tool changes alter behaviour without
@@ -121,7 +121,7 @@ projects:
     repo: Hmoute-Oussama/CI-CD-VISUALIZER
     artifact: assets/systems/pipeline.svg
     tagline: Flight recorder for CI/CD pipelines
-    accent: "#4CC2FF"
+    accent: "#5FD9FF"
     problem: >-
       CI/CD is a black box you debug by scrolling YAML and logs. There is no
       execution model, no recording, and no way to ask why a run was slow.
@@ -143,7 +143,7 @@ projects:
     repo: Hmoute-Oussama/CrisisMesh-Apertus
     artifact: assets/systems/crisismesh.svg
     tagline: Noisy crisis reports into a verifiable situation graph
-    accent: "#F5A524"
+    accent: "#FFB454"
     problem: >-
       During a crisis, reports are noisy, duplicated, contradictory and partly
       adversarial. Naive extraction fabricates counts and mis-types resources.
