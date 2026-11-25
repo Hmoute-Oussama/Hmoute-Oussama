@@ -433,17 +433,17 @@
 <g class="fade" style="animation-delay:0.72s"><path transform="translate(1021.0,108.0)" d="M11 0L5.5 9.5263L-5.5 9.5263L-11 0L-5.5 -9.5263L5.5 -9.5263Z" fill="#2B1A5E"/></g>
 <g class="fade" style="animation-delay:0.72s"><path transform="translate(1021.0,127.05)" d="M11 0L5.5 9.5263L-5.5 9.5263L-11 0L-5.5 -9.5263L5.5 -9.5263Z" fill="#2B1A5E"/></g>
 <g class="fade" style="animation-delay:0.72s"><path transform="translate(1021.0,146.11)" d="M11 0L5.5 9.5263L-5.5 9.5263L-11 0L-5.5 -9.5263L5.5 -9.5263Z" fill="#4B2AA8"/></g>
-<g class="fade" style="animation-delay:0.72s"><path transform="translate(1021.0,165.16)" d="M11 0L5.5 9.5263L-5.5 9.5263L-11 0L-5.5 -9.5263L5.5 -9.5263Z" fill="#0B0716" stroke="#1E1544" stroke-width="1"/></g>
+<g class="fade" style="animation-delay:0.72s"><path transform="translate(1021.0,165.16)" d="M11 0L5.5 9.5263L-5.5 9.5263L-11 0L-5.5 -9.5263L5.5 -9.5263Z" fill="#2B1A5E"/></g>
 <text class="m" x="40" y="268" fill="#66569E" font-size="9" letter-spacing="1.5">CONTRIBUTIONS (12M)</text>
-<text class="m" x="40" y="302" fill="#F2ECFF" font-size="25" font-weight="600">317</text>
+<text class="m" x="40" y="302" fill="#F2ECFF" font-size="25" font-weight="600">318</text>
 <path d="M40 312H66" fill="none" stroke="#5FD9FF" stroke-width="2.4" stroke-linecap="round"/>
 <path d="M219 252V318" fill="none" stroke="#1E1544"/>
 <text class="m" x="245" y="268" fill="#66569E" font-size="9" letter-spacing="1.5">ACTIVE DAYS</text>
-<text class="m" x="245" y="302" fill="#F2ECFF" font-size="25" font-weight="600">74</text>
+<text class="m" x="245" y="302" fill="#F2ECFF" font-size="25" font-weight="600">75</text>
 <path d="M245 312H271" fill="none" stroke="#6EF2B0" stroke-width="2.4" stroke-linecap="round"/>
 <path d="M424 252V318" fill="none" stroke="#1E1544"/>
 <text class="m" x="450" y="268" fill="#66569E" font-size="9" letter-spacing="1.5">LONGEST STREAK</text>
-<text class="m" x="450" y="302" fill="#F2ECFF" font-size="25" font-weight="600">4 d</text>
+<text class="m" x="450" y="302" fill="#F2ECFF" font-size="25" font-weight="600">5 d</text>
 <path d="M450 312H476" fill="none" stroke="#E879F9" stroke-width="2.4" stroke-linecap="round"/>
 <path d="M629 252V318" fill="none" stroke="#1E1544"/>
 <text class="m" x="655" y="268" fill="#66569E" font-size="9" letter-spacing="1.5">BUSIEST DAY / 2026-09-19</text>
